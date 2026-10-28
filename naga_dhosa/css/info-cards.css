@@ -1,0 +1,237 @@
+/* Info Cards Section */
+.info-cards-section {
+    padding: 3rem 1rem 5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Increased gap slightly for a more spacious 2x2 layout */
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #f0e6ff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card h3 {
+    font-size: 1.4rem; /* Increased size */
+    color: #1b0e35;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-main), serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.info-card h3 i {
+    font-size: 1rem;
+    color: #e59a0f;
+    margin-left: 5px;
+}
+
+.info-card > p {
+    font-size: 0.95rem; /* Increased size */
+    color: #666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Card 1: Promo Card */
+.promo-card {
+    background: linear-gradient(135deg, #fffcf5 0%, #ffe6d5 100%);
+    border: 1px solid #ffdec2;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.promo-card .promo-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f37021, #d4af37);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(243, 112, 33, 0.3);
+}
+
+.promo-card h3 {
+    color: #d1560e;
+}
+
+.promo-card p {
+    color: #8c4c23;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.btn-promo {
+    background: #f37021;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-promo:hover {
+    background: #d1560e;
+    color: white;
+}
+
+/* Card 2: Dosha List */
+.dosha-list {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.dosha-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.dosha-list li {
+    font-size: 0.95rem; /* Increased size */
+    color: #444;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.text-orange {
+    color: #f37021;
+}
+
+.dosha-list li i {
+    margin-top: 4px;
+    font-size: 0.85rem;
+}
+
+.view-link {
+    text-align: center;
+    display: block;
+    color: #6c46bc;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+/* Card 3: Effects */
+.effects-list {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.effects-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.effects-list li {
+    font-size: 0.95rem; /* Increased size */
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.3;
+}
+
+.effects-list li i {
+    color: #f37021;
+    font-size: 0.9rem;
+    margin-top: 3px;
+}
+
+.btn-outline-purple {
+    border: 1px solid #d4c4f0;
+    color: #6c46bc;
+    text-align: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.btn-outline-purple:hover {
+    background: #f4f0ff;
+}
+
+/* Card 4: Remedies */
+.remedies-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.remedies-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem; /* Increased size */
+    color: #444;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.remedies-list li span {
+    width: 26px; /* Increased size */
+    height: 26px; /* Increased size */
+    background: #6c46bc;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem; /* Increased size */
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .types-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

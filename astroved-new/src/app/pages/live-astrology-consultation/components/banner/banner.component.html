@@ -1,0 +1,187 @@
+<section class="banner-section">
+  <div class="banner-container">
+    
+    <div class="banner-content-left">
+      <h1 class="banner-title">
+        What’s Coming Next<br>
+        <span class="highlight-text">in Your Life?</span>
+      </h1>
+
+      <p class="banner-subtitle">
+        Your Next 5 Years May Hold More Than You Think.
+      </p>
+
+      <ul class="banner-benefits">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          100% Confidential
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Verified Experts
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Actionable Remedies
+        </li>
+      </ul>
+
+      <div class="banner-categories">
+        <div class="category-item">
+          <div class="cat-icon love">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <span>Love & Marriage</span>
+        </div>
+        <div class="category-item">
+          <div class="cat-icon career">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </div>
+          <span>Career</span>
+        </div>
+        <div class="category-item">
+          <div class="cat-icon money">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <span>Money</span>
+        </div>
+        <div class="category-item">
+          <div class="cat-icon health">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <span>Health</span>
+        </div>
+        <div class="category-item">
+          <div class="cat-icon business">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg>
+          </div>
+          <span>Business</span>
+        </div>
+        <div class="category-item">
+          <div class="cat-icon education">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <span>Education</span>
+        </div>
+      </div>
+
+      <div class="cta-actions">
+        <div class="cta-wrapper">
+          <a href="#" (click)="scrollToAstrologers($event)" class="btn-primary cta-btn">
+            Consult the Astrologer
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+          </a>
+          <span class="urgency-text">🔥 Limited consultation slots available today!</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="banner-content-right">
+      <div class="video-container">
+        <video autoplay loop muted playsinline class="banner-video">
+          <source src="/assets/videos/astroved_hero_video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay-ui">
+          <div class="play-button-large">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Booking Steps Dropdown -->
+  <div class="booking-steps-wrapper" [class.show]="showSteps">
+    <div class="booking-steps-container">
+      <h2 class="steps-heading" (click)="toggleSteps($event)">
+        STEPS TO BOOK A CONSULTATION 
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" [class.rotated]="showSteps"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </h2>
+      
+      <div class="steps-box">
+        <button class="close-steps-btn" (click)="toggleSteps($event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Select a language</h3>
+            <div class="step-mockup">
+              <div class="mockup-dropdown">
+                <div class="selected">English <span>▼</span></div>
+                <ul class="dropdown-list">
+                  <li class="active">English</li>
+                  <li>Tamil</li>
+                  <li>Telugu</li>
+                  <li>Hindi</li>
+                  <li>French</li>
+                  <li>Italian</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card center-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Select Astrologer, Date & Time</h3>
+            <div class="step-mockup">
+              <div class="mockup-profile">
+                 <div class="prof-header">
+                   <div class="prof-img"></div>
+                   <div class="prof-info">
+                     <h4>XXXX YYYY</h4>
+                     <p>Languages Known: Tamil, English</p>
+                     <p>Skills: Vedic Astrology, KP Astrology</p>
+                     <p>Experience: 12 years</p>
+                   </div>
+                   <div class="prof-action">
+                     <button class="book-btn">Book Appointment</button>
+                     <a href="#" class="profile-link">Profile</a>
+                   </div>
+                 </div>
+                 <div class="prof-timeline">
+                    <div class="timeline-tabs">
+                      <span class="active-tab">Tue, Jan 23</span>
+                      <span>Wed, Jan 24</span>
+                    </div>
+                    <div class="timeline-slots">
+                      <span class="slot-time">9:30 PM</span>
+                      <span class="slot-time">10:00 PM</span>
+                      <span class="slot-time">10:50 PM</span>
+                      <span class="slot-time active">11:00 PM</span>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card right-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Confirm and Proceed to checkout</h3>
+            <div class="step-mockup mockup-checkout-wrapper">
+              <div class="mockup-checkout">
+                 <p class="checkout-name">Vijayalakshmi K</p>
+                 <div class="time-options">
+                    <label><input type="radio" checked> 30 Minutes</label>
+                    <label><input type="radio"> 60 Minutes</label>
+                 </div>
+                 <p class="price">USD 59.00</p>
+                 <div class="checkout-btns">
+                   <button class="confirm-btn">Confirm</button>
+                   <button class="cancel-btn">Cancel</button>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,406 @@
+/* ============================================================
+   6. TIME ZONE & BOOKING INFO SECTION
+   ============================================================ */
+.booking-info-section {
+    padding: 1rem 1rem 1.5rem 1rem;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.booking-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.booking-header {
+    text-align: center;
+}
+
+.booking-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(135deg, #6868f9 0%, #a274ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+}
+
+.booking-subtitle {
+    font-size: 1rem;
+    color: #4a4d56;
+    margin: 0 0 1rem 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.title-decor,
+.bottom-decor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.decor-line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(199, 169, 114, 0.6), transparent);
+}
+
+.decor-star {
+    color: #c7a972;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.pricing-cards {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
+}
+
+.price-card {
+    background: #ffffff;
+    border: 1px solid rgba(104, 104, 249, 0.15);
+    border-radius: 20px;
+    padding: 1rem 2.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+    min-width: 220px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.price-card:hover {
+    border-color: rgba(104, 104, 249, 0.4);
+    box-shadow: 0 10px 35px rgba(104, 104, 249, 0.08);
+    transform: translateY(-2px);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: #f4eefe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    margin-bottom: 0.4rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.price-card:hover .icon-circle {
+    transform: translateY(-4px) scale(1.1) rotate(5deg);
+    background: #ebe0ff;
+    color: #6868f9;
+}
+
+.icon-circle.small {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0;
+}
+
+.price-card .duration {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 0.2rem;
+}
+
+.price-card .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6868f9;
+}
+
+
+.language-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(104, 104, 249, 0.2);
+    border-radius: 40px;
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
+    background: #fdfcff;
+    transition: all 0.3s ease;
+}
+
+.language-row:hover, .mode-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(104, 104, 249, 0.06);
+    border-color: rgba(104, 104, 249, 0.35);
+}
+
+.lang-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.lang-left label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    margin: 0;
+}
+
+.custom-select {
+    position: relative;
+    width: 160px;
+}
+
+.custom-select select {
+    width: 100%;
+    appearance: none;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border: 1px solid rgba(104, 104, 249, 0.4);
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #334155;
+    font-weight: 500;
+    background: #ffffff;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.custom-select select:focus {
+    border-color: #6868f9;
+    box-shadow: 0 0 0 3px rgba(104, 104, 249, 0.1);
+}
+
+.custom-select .chevron {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6868f9;
+}
+
+.timezone-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    margin-top: 0;
+}
+
+.timezone-row label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    margin: 0;
+}
+
+.tz-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6868f9;
+}
+
+.mode-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(104, 104, 249, 0.2);
+    border-radius: 40px;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
+    background: #fdfcff;
+    transition: all 0.3s ease;
+}
+
+.modes-list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mode-badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a4d56;
+    background: #f0f0fa;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mode-badge:hover {
+    background: #e2e2fa;
+    color: #6868f9;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(104, 104, 249, 0.1);
+}
+
+.inclusions-row {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(104, 104, 249, 0.03);
+    border: 1px dashed rgba(104, 104, 249, 0.3);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    transition: all 0.4s ease;
+}
+
+.inclusions-row:hover {
+    background: rgba(104, 104, 249, 0.06);
+    border-style: solid;
+    transform: scale(1.01);
+}
+
+.inclusions-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 0;
+}
+
+.inclusions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.inclusions-list span {
+    font-size: 0.85rem;
+    color: #4a4d56;
+    font-weight: 500;
+}
+
+.bottom-decor {
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+
+.slot-legends {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    padding: 0.6rem 1.2rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.green {
+    background: #10b981;
+    animation: pulse-dot-green 2s infinite;
+}
+
+.dot.red {
+    background: #ef4444;
+    animation: pulse-dot-red 2s infinite;
+}
+
+@keyframes pulse-dot-green {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes pulse-dot-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 600px) {
+    .booking-card {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .booking-title {
+        font-size: 1.6rem;
+    }
+
+    .pricing-cards {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .price-card {
+        width: 100%;
+        min-width: unset;
+        padding: 1rem;
+    }
+
+    .language-row {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .timezone-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .slot-legends {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .legend-item {
+        justify-content: center;
+    }
+}

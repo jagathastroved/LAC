@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Hide fixed sticky elements when a modal is open */
+body.modal-open .sticky-cta-bar,
+body.modal-open .scroll-top-btn {
+    display: none !important;
+}

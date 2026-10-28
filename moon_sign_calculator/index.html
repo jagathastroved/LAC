@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Calculate your Moon Sign (Rashi) instantly with Astropedia's free Moon Sign Calculator. Enter your birth details to discover your Vedic moon sign and personality traits." />
+    <title>Moon Sign Calculator | Rashi Calculator – Astropedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/png" href="assests/fav_icon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+    <header>
+        <div class="nav-overlay" id="nav-overlay"></div>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="navbar-inner">
+
+                <!-- Logo -->
+                <a href="#" class="navbar-logo" id="nav-logo" aria-label="Astropedia Home">
+                    <img src="https://www.astroved.com/astropedia/assets/images/astropedia-logo.svg"
+                        alt="Astropedia Logo" class="logo-img" />
+                </a>
+
+                <!-- Navigation links -->
+                <ul class="navbar-nav" id="navbar-nav" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-home" role="menuitem">
+                            Home <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-home-today">Today's Panchang</a>
+                            <a href="#" id="dd-home-muhurat">Muhurat Finder</a>
+                            <a href="#" id="dd-home-kundali">Kundali</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-108" role="menuitem">
+                            108 Divya Desam <span class="nav-badge-blue">New</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-festivals" role="menuitem">
+                            Festivals <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-fest-upcoming">Upcoming Festivals</a>
+                            <a href="#" id="dd-fest-2024">2024 Calendar</a>
+                            <a href="#" id="dd-fest-vrats">Vrats &amp; Fasts</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-fasting" role="menuitem">
+                            Fasting <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-fast-ekadashi">Ekadashi</a>
+                            <a href="#" id="dd-fast-pradosh">Pradosh</a>
+                            <a href="#" id="dd-fast-monday">Monday Fast</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-deities" role="menuitem">
+                            Deities <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-deity-shiva">Lord Shiva</a>
+                            <a href="#" id="dd-deity-vishnu">Lord Vishnu</a>
+                            <a href="#" id="dd-deity-devi">Devi</a>
+                            <a href="#" id="dd-deity-ganesha">Ganesha</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-temples" role="menuitem">
+                            Temples <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-temple-famous">Famous Temples</a>
+                            <a href="#" id="dd-temple-near">Near Me</a>
+                            <a href="#" id="dd-temple-jyotirlingas">Jyotirlingas</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-astrology" role="menuitem">
+                            Astrology <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-astro-horoscope">Daily Horoscope</a>
+                            <a href="#" id="dd-astro-kundali">Kundali Matching</a>
+                            <a href="#" id="dd-astro-numerology">Numerology</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link active" id="nav-freetools" role="menuitem">
+                            Free Tools <span class="arrow-caret">▾</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" id="dd-tool-moon">Moon Sign Calculator</a>
+                            <a href="#" id="dd-tool-naga">Naga Dosha Calculator</a>
+                            <a href="#" id="dd-tool-name">Name Numerology</a>
+                            <a href="#" id="dd-tool-compatibility">Compatibility</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" role="none">
+                        <a href="#" class="nav-link" id="nav-services" role="menuitem">
+                            Astrology Services
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Right side controls -->
+                <div class="navbar-right">
+                    <button class="nav-icon-btn" id="nav-search-btn" aria-label="Search">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </button>
+
+                    <div class="nav-location" id="nav-location" title="Change location">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#1e293b">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <span>Chennai</span>
+                    </div>
+
+                    <div class="nav-date" id="nav-date">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#1e293b">
+                            <path
+                                d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z" />
+                        </svg>
+                        <span id="nav-date-text">04 Aug</span>
+                    </div>
+
+                    <!-- Hamburger for mobile -->
+                    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+       HOME BANNER HERO SECTION
+  ══════════════════════════════════════════ -->
+    <section class="banner-hero" aria-label="Moon Sign Calculator banner">
+
+        <!-- Floating Breadcrumb Top Left -->
+        <div class="banner-breadcrumb">
+            <a href="#" id="bc-home">Home</a> &gt;
+            <a href="#" id="bc-freetools">Free Tools</a> &gt;
+            <span>Moon Sign Calculator</span>
+        </div>
+
+        <div class="banner-container">
+            <div class="banner-content">
+
+                <!-- Title -->
+                <h1 class="banner-title">
+                    Moon Sign <span class="highlight-purple">Calculator</span>
+                </h1>
+
+                <!-- Celestial Star & Crescent Divider -->
+                <div class="banner-moon-divider">
+                    <span class="star-mark">✦</span>
+                    <span class="divider-line"></span>
+                    <span class="crescent-icon">🌙</span>
+                    <span class="divider-line"></span>
+                    <span class="star-mark">✦</span>
+                </div>
+
+                <!-- Subtitle -->
+                <p class="banner-desc">
+                    Discover your Moon sign and reveal the hidden emotions, strengths, and life path that shape your
+                    true
+                    self.
+                </p>
+
+
+
+                <!-- CTA Button -->
+                <div class="banner-cta-wrap">
+                    <a href="#" class="banner-cta-purple-btn" id="banner-cta-btn">
+                        Calculate My Moon Sign &rarr;
+                    </a>
+                </div>
+
+                <!-- Micro Trust Badges -->
+
+
+            </div><!-- /banner-content -->
+        </div><!-- /banner-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       DEDICATED INLINE CALCULATOR SECTION (Below Banner)
+  ══════════════════════════════════════════ -->
+    <section id="calculator-section" class="calculator-section" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
+        <div class="calculator-container form-animated-container">
+
+            <div class="premium-naga-form-container" id="nagaFormCard">
+                <button class="btn-dismiss" id="btnDismissForm" aria-label="Close form"><i class="fa-solid fa-xmark"></i></button>
+
+                <h3 class="premium-naga-title" id="formMainTitle">Enter Your Details</h3>
+                <div class="om-divider" id="formMainDivider">
+                    <span class="om-line"></span>
+                    <span class="om-symbol">ॐ</span>
+                    <span class="om-line"></span>
+                </div>
+
+                <!-- STEP 1: FORM VIEW -->
+                <div id="calc-form-step">
+                    <form id="moon-sign-form" autocomplete="off" class="dosha-form-new">
+                        <div class="modern-form-grid">
+
+                            <!-- Row 1: FULL NAME -->
+                            <div class="modern-fg">
+                                <label>FULL NAME</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="calc-name" placeholder="Enter name">
+                                </div>
+                            </div>
+
+                            <!-- Row 1: GENDER -->
+                            <div class="modern-fg">
+                                <label>GENDER</label>
+                                <div class="modern-input-wrapper custom-select-wrapper" id="genderSelectWrapper" style="padding: 0;">
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                    <div class="custom-select-trigger" style="padding: 14px 15px 14px 45px; width: 100%;">
+                                        <span class="custom-select-value" style="font-weight: 500; color: #1e293b;">Select</span>
+                                        <i class="fa-solid fa-chevron-down drop-icon" style="position: static; margin-left: auto;"></i>
+                                    </div>
+                                    <div class="custom-select-options">
+                                        <div class="custom-option" data-value="Male">Male</div>
+                                        <div class="custom-option" data-value="Female">Female</div>
+                                        <div class="custom-option" data-value="Other">Other</div>
+                                    </div>
+                                    <input type="hidden" name="gender" id="calc-gender" value="Select">
+                                </div>
+                            </div>
+
+                            <!-- Row 1: DATE OF BIRTH -->
+                            <div class="modern-fg">
+                                <label>DATE OF BIRTH</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <div class="multi-input-modern">
+                                        <input type="text" id="calc-day" placeholder="DD" maxlength="2">
+                                        <span class="sep">/</span>
+                                        <input type="text" id="calc-month" placeholder="MM" maxlength="2">
+                                        <span class="sep">/</span>
+                                        <input type="text" id="calc-year" placeholder="YYYY" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: TIME OF BIRTH -->
+                            <div class="modern-fg">
+                                <label>TIME OF BIRTH</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class="multi-input-modern">
+                                        <input type="text" id="calc-hour" placeholder="HH" maxlength="2">
+                                        <span class="sep">:</span>
+                                        <input type="text" id="calc-min" placeholder="MM" maxlength="2">
+                                        <span class="sep">:</span>
+                                        <input type="text" id="calc-sec" placeholder="SS" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: COUNTRY -->
+                            <div class="modern-fg">
+                                <label>COUNTRY</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <input type="text" id="calc-country" placeholder="Country">
+                                </div>
+                            </div>
+
+                            <!-- Row 2: CITY -->
+                            <div class="modern-fg">
+                                <label>CITY</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="calc-location" placeholder="City">
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-submit-modern" id="btn-submit-calc">
+                                <span>Calculate My Moon Sign</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div><!-- /calc-form-step -->
+
+                <!-- STEP 2: RESULT VIEW -->
+                <div id="calc-result-step" style="display: none;">
+                    <div class="result-container-card">
+
+                        <!-- Simple Results Table -->
+                        <div class="result-simple-table">
+                            <div class="rst-row">
+                                <div class="rst-label">Moon sign</div>
+                                <div class="rst-value" id="res-moon-sign-table">Gemini</div>
+                            </div>
+                            <div class="rst-row">
+                                <div class="rst-label">Birth Star</div>
+                                <div class="rst-value" id="res-birth-star-table">Ardra</div>
+                            </div>
+                            <div class="rst-row">
+                                <div class="rst-label">Padam</div>
+                                <div class="rst-value" id="res-padam-table">3</div>
+                            </div>
+                        </div>
+
+                        <!-- Simple Horoscope CTA Box -->
+                        <div class="result-simple-horoscope">
+                            <p>Want to see today's prediction for <strong id="horo-sign-name">Gemini</strong>?</p>
+                            <button type="button" class="btn-view-horoscope-simple" id="btn-view-horoscope">
+                                View Daily Horoscope
+                            </button>
+                        </div>
+
+                        <!-- Action Controls -->
+                        <div class="result-action-row">
+                            <button type="button" class="btn-recalc-purple-outline" id="btn-recalculate">
+                                <i class="fa-solid fa-rotate-left"></i> Calculate Again / Change Details
+                            </button>
+                        </div>
+
+                    </div>
+                </div><!-- /calc-result-step -->
+
+            </div><!-- /premium-naga-form-container -->
+        </div><!-- /calculator-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       WHY FIND YOUR MOON SIGN SECTION
+  ══════════════════════════════════════════ -->
+    <section class="why-moon-sign" aria-label="Why Find Your Moon Sign">
+        <div class="why-container">
+            <!-- Section Title -->
+            <h2 class="why-title">Why Find Your Moon Sign?</h2>
+
+            <!-- Divider Line with Diamond/Star Ornament -->
+            <div class="why-divider">
+                <span class="divider-line"></span>
+                <span class="star-mark">✦</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- 6 Feature Cards Grid -->
+            <div class="why-cards-grid">
+
+                <!-- Card 1: Understand Your Emotions -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/emotion.png" alt="Understand Your Emotions" />
+                    </div>
+                    <h3 class="why-card-title">Understand Your Emotions</h3>
+                    <p class="why-card-desc">
+                        Know how your mind reacts and what truly makes you happy.
+                    </p>
+                </div>
+
+                <!-- Card 2: Improve Relationships -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/relationship.png" alt="Improve Relationships" />
+                    </div>
+                    <h3 class="why-card-title">Improve Relationships</h3>
+                    <p class="why-card-desc">
+                        Build stronger bonds by understanding emotional needs and compatibility.
+                    </p>
+                </div>
+
+                <!-- Card 3: Better Decisions -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/decision.png" alt="Better Decisions" />
+                    </div>
+                    <h3 class="why-card-title">Better Decisions</h3>
+                    <p class="why-card-desc">
+                        Make choices that align with your inner self and emotional instincts.
+                    </p>
+                </div>
+
+                <!-- Card 4: Career Alignment -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/career.png" alt="Career Alignment" />
+                    </div>
+                    <h3 class="why-card-title">Career Alignment</h3>
+                    <p class="why-card-desc">
+                        Choose the right career path that suits your natural tendencies.
+                    </p>
+                </div>
+
+                <!-- Card 5: Enhance Well-being -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/well being.png" alt="Enhance Well-being" />
+                    </div>
+                    <h3 class="why-card-title">Enhance Well-being</h3>
+                    <p class="why-card-desc">
+                        Improve mental peace by understanding emotional patterns and triggers.
+                    </p>
+                </div>
+
+                <!-- Card 6: Spiritual Growth -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <img src="assests/images/spiritual.png" alt="Spiritual Growth" />
+                    </div>
+                    <h3 class="why-card-title">Spiritual Growth</h3>
+                    <p class="why-card-desc">
+                        Strengthen intuition and inner awareness for a more meaningful life.
+                    </p>
+                </div>
+
+            </div><!-- /why-cards-grid -->
+        </div><!-- /why-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       WHAT IS MOON SIGN SECTION
+  ══════════════════════════════════════════ -->
+    <section class="what-is-moon-sign" aria-label="What is Moon Sign">
+        <div class="what-container">
+            <!-- Left Image Column -->
+            <div class="what-image-wrap">
+                <img src="assests/images-1/moon.png" alt="Moon Sign Illustration" class="what-img" />
+            </div>
+
+            <!-- Right Content Column -->
+            <div class="what-content">
+                <!-- Title with Crescent Icon -->
+                <div class="what-header">
+                    <span class="crescent-moon-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </span>
+                    <h2 class="what-title">What is <span class="highlight-purple">Moon Sign?</span></h2>
+                </div>
+
+                <!-- Main Paragraph -->
+                <p class="what-desc">
+                    Your Moon sign represents your inner self, emotions, instincts, and subconscious mind. It is
+                    calculated based on the position of the Moon at the exact time of your birth.
+                </p>
+
+                <!-- 4 Cards Row -->
+                <div class="what-cards-grid">
+
+                    <!-- Card 1: Emotional Nature -->
+                    <div class="what-card">
+                        <div class="what-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <circle cx="12" cy="12" r="1.5" fill="#7c3aed"></circle>
+                                <line x1="12" y1="2" x2="12" y2="4"></line>
+                                <line x1="12" y1="20" x2="12" y2="22"></line>
+                                <line x1="2" y1="12" x2="4" y2="12"></line>
+                                <line x1="20" y1="12" x2="22" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="what-card-title">Emotional Nature</h3>
+                        <p class="what-card-text">Reflects your feelings and inner world.</p>
+                    </div>
+
+                    <!-- Card 2: Instincts & Reactions -->
+                    <div class="what-card">
+                        <div class="what-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04Z">
+                                </path>
+                                <path
+                                    d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="what-card-title">Instincts &amp; Reactions</h3>
+                        <p class="what-card-text">Shows how you naturally respond.</p>
+                    </div>
+
+                    <!-- Card 3: Inner Needs -->
+                    <div class="what-card">
+                        <div class="what-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="what-card-title">Inner Needs</h3>
+                        <p class="what-card-text">Reveals what makes you feel secure.</p>
+                    </div>
+
+                    <!-- Card 4: Life Path Clues -->
+                    <div class="what-card">
+                        <div class="what-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
+                            </svg>
+                        </div>
+                        <h3 class="what-card-title">Life Path Clues</h3>
+                        <p class="what-card-text">Guides your personal growth and journey.</p>
+                    </div>
+
+                </div><!-- /what-cards-grid -->
+            </div><!-- /what-content -->
+        </div><!-- /what-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       HOW MOON SIGN CALCULATOR WORKS SECTION
+  ══════════════════════════════════════════ -->
+    <section class="how-it-works" aria-label="How Moon Sign Calculator Works">
+        <div class="how-container">
+            <!-- Section Title -->
+            <h2 class="how-title">How Moon Sign Calculator Works?</h2>
+
+            <!-- Celestial Gold Divider Line -->
+            <div class="how-divider">
+                <span class="divider-line"></span>
+                <span class="star-mark">✦</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Steps Flow Container -->
+            <div class="how-steps-flow">
+
+                <!-- Step 1 -->
+                <div class="how-step-item">
+                    <div class="step-icon-wrap">
+                        <span class="step-badge">1</span>
+                        <div class="step-icon-circle">
+                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2b1454"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="17" rx="3" ry="3"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <circle cx="8" cy="13" r="1" fill="#2b1454" stroke="none"></circle>
+                                <circle cx="12" cy="13" r="1" fill="#2b1454" stroke="none"></circle>
+                                <circle cx="16" cy="13" r="1" fill="#2b1454" stroke="none"></circle>
+                                <circle cx="8" cy="17" r="1" fill="#2b1454" stroke="none"></circle>
+                                <circle cx="12" cy="17" r="1" fill="#2b1454" stroke="none"></circle>
+                                <circle cx="16" cy="17" r="1" fill="#2b1454" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Enter Birth Details</h3>
+                    <p class="step-desc">Provide your accurate birth date, time and place.</p>
+                </div>
+
+                <!-- Connector Arrow 1 -->
+                <div class="step-arrow">
+                    <svg width="44" height="16" viewBox="0 0 44 16" fill="none" stroke="#cfa972" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <line x1="2" y1="8" x2="36" y2="8" stroke-dasharray="3 3"></line>
+                        <polyline points="32,4 38,8 32,12" stroke-dasharray="none" stroke="#cfa972" stroke-width="1.8">
+                        </polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="how-step-item">
+                    <div class="step-icon-wrap">
+                        <span class="step-badge">2</span>
+                        <div class="step-icon-circle">
+                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2b1454"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9.5"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="#2b1454"
+                                    stroke="none"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Calculate Position</h3>
+                    <p class="step-desc">We calculate the exact position of the Moon at your birth.</p>
+                </div>
+
+                <!-- Connector Arrow 2 -->
+                <div class="step-arrow">
+                    <svg width="44" height="16" viewBox="0 0 44 16" fill="none" stroke="#cfa972" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <line x1="2" y1="8" x2="36" y2="8" stroke-dasharray="3 3"></line>
+                        <polyline points="32,4 38,8 32,12" stroke-dasharray="none" stroke="#cfa972" stroke-width="1.8">
+                        </polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="how-step-item">
+                    <div class="step-icon-wrap">
+                        <span class="step-badge">3</span>
+                        <div class="step-icon-circle">
+                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2b1454"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Find Moon Sign</h3>
+                    <p class="step-desc">Your Moon sign is determined from the Moon's position.</p>
+                </div>
+
+                <!-- Connector Arrow 3 -->
+                <div class="step-arrow">
+                    <svg width="44" height="16" viewBox="0 0 44 16" fill="none" stroke="#cfa972" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <line x1="2" y1="8" x2="36" y2="8" stroke-dasharray="3 3"></line>
+                        <polyline points="32,4 38,8 32,12" stroke-dasharray="none" stroke="#cfa972" stroke-width="1.8">
+                        </polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="how-step-item">
+                    <div class="step-icon-wrap">
+                        <span class="step-badge">4</span>
+                        <div class="step-icon-circle">
+                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2b1454"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="8" y1="13" x2="14" y2="13"></line>
+                                <line x1="8" y1="17" x2="11" y2="17"></line>
+                                <circle cx="15" cy="17" r="1.5" fill="#2b1454" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">View Detailed Result</h3>
+                    <p class="step-desc">Get complete personality insights based on your Moon sign.</p>
+                </div>
+
+                <!-- Connector Arrow 4 -->
+                <div class="step-arrow">
+                    <svg width="44" height="16" viewBox="0 0 44 16" fill="none" stroke="#cfa972" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <line x1="2" y1="8" x2="36" y2="8" stroke-dasharray="3 3"></line>
+                        <polyline points="32,4 38,8 32,12" stroke-dasharray="none" stroke="#cfa972" stroke-width="1.8">
+                        </polyline>
+                    </svg>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="how-step-item">
+                    <div class="step-icon-wrap">
+                        <span class="step-badge">5</span>
+                        <div class="step-icon-circle">
+                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2b1454"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 3h12l4 6-10 12L2 9z"></path>
+                                <line x1="11" y1="3" x2="8" y2="9"></line>
+                                <line x1="13" y1="3" x2="16" y2="9"></line>
+                                <line x1="2" y1="9" x2="22" y2="9"></line>
+                                <line x1="12" y1="21" x2="8" y2="9"></line>
+                                <line x1="12" y1="21" x2="16" y2="9"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Use Insights</h3>
+                    <p class="step-desc">Apply the insights for better relationships, career and personal growth.</p>
+                </div>
+
+            </div><!-- /how-steps-flow -->
+        </div><!-- /how-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       THE MOON SIGNS SECTION
+  ══════════════════════════════════════════ -->
+    <section class="the-moon-signs" aria-label="The Moon Signs">
+        <div class="moon-signs-container">
+            <h2 class="moon-signs-title">The Moon Signs</h2>
+            <p class="moon-signs-subtitle">
+                There are twelve types of Moon signs and the placement in the zodiac signs signify the emotional
+                tendencies.
+            </p>
+
+            <div class="moon-signs-grid">
+                <!-- 1. Aries -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/Aries.png" alt="Aries Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Aries</h3>
+                        <p class="moon-sign-desc">Impulsive, energetic and confident</p>
+                    </div>
+                </div>
+
+                <!-- 2. Taurus -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/taurus.png" alt="Taurus Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Taurus</h3>
+                        <p class="moon-sign-desc">Stable, patient and values comfort</p>
+                    </div>
+                </div>
+
+                <!-- 3. Gemini -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/gemini.png" alt="Gemini Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Gemini</h3>
+                        <p class="moon-sign-desc">Curious, adaptable and communicative</p>
+                    </div>
+                </div>
+
+                <!-- 4. Cancer -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/cancer.png" alt="Cancer Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Cancer</h3>
+                        <p class="moon-sign-desc">Emotional, caring and family-oriented</p>
+                    </div>
+                </div>
+
+                <!-- 5. Leo -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/leo.png" alt="Leo Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Leo</h3>
+                        <p class="moon-sign-desc">Confident, warm and seeks appreciation</p>
+                    </div>
+                </div>
+
+                <!-- 6. Virgo -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/virgo.png" alt="Virgo Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Virgo</h3>
+                        <p class="moon-sign-desc">Analytical, practical and perfectionist</p>
+                    </div>
+                </div>
+
+                <!-- 7. Libra -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/libra.png" alt="Libra Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Libra</h3>
+                        <p class="moon-sign-desc">Balanced, charming and seeks harmony</p>
+                    </div>
+                </div>
+
+                <!-- 8. Scorpio -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/scorpio.png" alt="Scorpio Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Scorpio</h3>
+                        <p class="moon-sign-desc">Intense, mysterious and deeply emotional</p>
+                    </div>
+                </div>
+
+                <!-- 9. Sagittarius -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/sagittarius.png" alt="Sagittarius Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Sagittarius</h3>
+                        <p class="moon-sign-desc">Optimistic, freedom-loving and philosophical</p>
+                    </div>
+                </div>
+
+                <!-- 10. Capricorn -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/capricorn.png" alt="Capricorn Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Capricorn</h3>
+                        <p class="moon-sign-desc">Disciplined, ambitious and responsible</p>
+                    </div>
+                </div>
+
+                <!-- 11. Aquarius -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/aquarius.png" alt="Aquarius Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Aquarius</h3>
+                        <p class="moon-sign-desc">Independent, innovative and humanitarian</p>
+                    </div>
+                </div>
+
+                <!-- 12. Pisces -->
+                <div class="moon-sign-card">
+                    <div class="moon-sign-icon-wrap">
+                        <img src="assests/images-2/pisces.png" alt="Pisces Moon Sign" class="moon-sign-img" />
+                    </div>
+                    <div class="moon-sign-info">
+                        <h3 class="moon-sign-name">Pisces</h3>
+                        <p class="moon-sign-desc">Compassionate, dreamy and intuitive</p>
+                    </div>
+                </div>
+            </div><!-- /moon-signs-grid -->
+        </div><!-- /moon-signs-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       LET THE MOON GUIDE YOUR LIFE CTA SECTION
+  ══════════════════════════════════════════ -->
+    <section class="moon-guide-section" aria-label="Let the Moon Guide Your Life">
+        <div class="moon-guide-container">
+            <div class="moon-guide-banner">
+                <!-- Title -->
+                <h2 class="moon-guide-title">Let the Moon Guide Your Life</h2>
+
+                <!-- Subtitle -->
+                <p class="moon-guide-desc">
+                    Discover what your Moon sign has in store for you and take the right steps towards happiness,
+                    balance and success.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="moon-guide-buttons">
+                    <a href="#" class="moon-guide-btn btn-purple">
+                        <span class="btn-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#6b21a8">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="btn-text">View My Year-Long Predictions &rarr;</span>
+                    </a>
+
+                    <a href="#" class="moon-guide-btn btn-gold">
+                        <span class="btn-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706"
+                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6"></path>
+                                <path d="M10 22h4"></path>
+                                <path
+                                    d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.6 2.83 1.5 3.5.76.76 1.23 1.52 1.41 2.5">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="btn-text">Bring Peace to My Mind &rarr;</span>
+                    </a>
+                </div>
+            </div><!-- /moon-guide-banner -->
+        </div><!-- /moon-guide-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       FAQ & RELATED SEARCHES SECTION
+  ══════════════════════════════════════════ -->
+    <section class="faq-related-section" aria-label="Frequently Asked Questions and Related Searches">
+        <div class="faq-related-container">
+
+            <!-- LEFT COLUMN: FAQ Accordion -->
+            <div class="faq-card-wrap">
+                <div class="card-header-block">
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                    <p class="faq-subtitle">Find clear answers to common questions about Moon Sign &amp; remedies</p>
+                </div>
+
+                <div class="faq-accordion">
+                    <!-- Item 1 -->
+                    <div class="faq-item active">
+                        <button class="faq-question-btn" aria-expanded="true">
+                            <span>What is a Moon sign?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Your Moon sign represents your inner emotional self, mind, and subconscious instincts. It is calculated based on the position of the Moon at the exact time and place of your birth.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Why is Moon sign important?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>In Vedic Astrology, the Moon controls your mind, emotions, and daily feelings. It determines your Nakshatra, daily horoscope, and overall mental peace.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>How is Moon sign calculated?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It is calculated using your precise birth date, exact birth time, and birth location to trace the exact zodiac constellation occupied by the Moon at your birth.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Can Moon sign change?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, your Vedic Moon sign is determined by the planetary alignment at the moment of your birth and stays constant throughout your life.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question-btn" aria-expanded="false">
+                            <span>Is exact birth time necessary?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, because the Moon changes zodiac signs approximately every 2.5 days, an accurate birth time ensures precise calculation of your Moon sign and Nakshatra.</p>
+                        </div>
+                    </div>
+                </div><!-- /faq-accordion -->
+            </div><!-- /faq-card-wrap -->
+
+
+            <!-- RIGHT COLUMN: Related Searches Card containing Talk to Astrologer -->
+            <div class="related-searches-card">
+                <div class="related-searches-top">
+                    <div class="card-header-block">
+                        <h3 class="related-title">Related Searches</h3>
+                        <p class="related-subtitle">Explore popular topics &amp; quick queries</p>
+                    </div>
+
+                    <div class="related-tags-grid">
+                        <a href="#" class="related-tag-pill">What is Moon Sign?</a>
+                        <a href="#" class="related-tag-pill">Moon Sign Calculator</a>
+                        <a href="#" class="related-tag-pill">Moon Sign Meaning</a>
+                        <a href="#" class="related-tag-pill">Moon Sign Personality</a>
+                        <a href="#" class="related-tag-pill">Moon Sign by Date of Birth</a>
+                        <a href="#" class="related-tag-pill">Moon Sign Compatibility</a>
+                    </div>
+                </div>
+
+                <!-- Talk to Astrologer Banner embedded inside Related Searches Card -->
+                <div class="talk-astrologer-card">
+                    <div class="talk-content">
+                        <div class="talk-header">
+                            <div class="talk-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="talk-titles">
+                                <h4 class="talk-title">Talk to Astrologer</h4>
+                                <p class="talk-desc">Get detailed guidance on Moon sign and life path.</p>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn-consult-now">
+                            Consult Now &rarr;
+                        </a>
+                    </div>
+                </div><!-- /talk-astrologer-card -->
+
+            </div><!-- /related-searches-card -->
+
+        </div><!-- /faq-related-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+    <script>
+        /* ── Live date in navbar ── */
+        const dateEl = document.getElementById('nav-date-text');
+        if (dateEl) {
+            const now = new Date();
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            dateEl.textContent = now.getDate() + ' ' + months[now.getMonth()];
+        }
+
+
+        /* ── FAQ Accordion toggle ── */
+        document.querySelectorAll('.faq-question-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('active');
+
+                // Toggle clicked item
+                if (isOpen) {
+                    item.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    // Close others
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('active');
+                        const qBtn = i.querySelector('.faq-question-btn');
+                        if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
+                    });
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+
+
+
+    <!-- ══════════════════════════════════════════
+       DAILY HOROSCOPE MODAL
+  ══════════════════════════════════════════ -->
+    <div class="astro-modal-overlay" id="astro-horoscope-modal" aria-hidden="true" role="dialog">
+        <div class="astro-modal-card" style="max-width: 580px;">
+            <div class="modal-header-block" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">
+                <button class="modal-close-btn" id="horo-modal-close" aria-label="Close modal">&times;</button>
+                <h2 class="modal-header-title" id="horo-modal-title">
+                    Today's Gemini Horoscope
+                </h2>
+                <p class="modal-header-subtitle" id="horo-modal-date">
+                    Wednesday, July 06, 2005
+                </p>
+            </div>
+            <div class="modal-card-body">
+                <div class="horo-card-item" style="margin-bottom: 12px;">
+                    <h4>✨ Daily Overview</h4>
+                    <p id="horo-modal-overview"></p>
+                </div>
+                <div class="horo-grid">
+                    <div class="horo-card-item">
+                        <h4>❤️ Love &amp; Relationships</h4>
+                        <p id="horo-modal-love"></p>
+                    </div>
+                    <div class="horo-card-item">
+                        <h4>💼 Career &amp; Finance</h4>
+                        <p id="horo-modal-career"></p>
+                    </div>
+                </div>
+                <div class="horo-card-item" style="margin-top: 12px;">
+                    <h4>🌿 Health &amp; Mindset</h4>
+                    <p id="horo-modal-health"></p>
+                </div>
+                <div class="horo-badge-row">
+                    <div class="horo-badge">
+                        <strong>LUCKY NUMBER</strong>
+                        <span id="horo-modal-num">5</span>
+                    </div>
+                    <div class="horo-badge" style="background: #fefce8; border-color: #fef08a;">
+                        <strong style="color: #854d0e;">LUCKY COLORS</strong>
+                        <span id="horo-modal-color" style="color: #a16207;">Emerald Green</span>
+                    </div>
+                </div>
+                <div class="horo-card-item" style="margin-top: 12px; background: #fff7ed; border-color: #ffedd5;">
+                    <h4 style="color: #c2410c;">🕉️ Recommended Remedy</h4>
+                    <p id="horo-modal-remedy" style="color: #9a3412; font-weight: 500;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator JS -->
+    <script src="js/calculator.js"></script>
+
+    <!-- Hamburger Menu Toggle & Side Drawer Handler -->
+    <script>
+      (function () {
+        var btn = document.getElementById('hamburger-btn');
+        var nav = document.querySelector('.navbar-nav');
+        var overlay = document.getElementById('nav-overlay');
+
+        if (btn && nav) {
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            if (overlay) overlay.classList.toggle('active', isOpen);
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+
+          if (overlay) {
+            overlay.addEventListener('click', function () {
+              nav.classList.remove('open');
+              btn.classList.remove('open');
+              overlay.classList.remove('active');
+              btn.setAttribute('aria-expanded', 'false');
+            });
+          }
+
+          // Enable mobile dropdown click toggling
+          var dropdownItems = nav.querySelectorAll('.nav-item');
+          dropdownItems.forEach(function (item) {
+            var link = item.querySelector('.nav-link');
+            var menu = item.querySelector('.dropdown-menu');
+            if (link && menu) {
+              link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1280) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  var wasActive = item.classList.contains('active-mobile-dropdown');
+                  
+                  // Collapse all dropdown items
+                  dropdownItems.forEach(function (other) {
+                    other.classList.remove('active-mobile-dropdown');
+                  });
+
+                  // If it was not open, expand it
+                  if (!wasActive) {
+                    item.classList.add('active-mobile-dropdown');
+                  }
+                }
+              });
+            }
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener('click', function (e) {
+            if (!btn.contains(e.target) && !nav.contains(e.target)) {
+              nav.classList.remove('open');
+              btn.classList.remove('open');
+              if (overlay) overlay.classList.remove('active');
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+      })();
+    </script>
+
+</body>
+
+</html>

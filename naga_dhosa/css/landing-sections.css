@@ -1,0 +1,1034 @@
+/* ==========================================================================
+   Naga Dosha Landing Page Sections
+   ========================================================================== */
+
+/* Global Section Styles */
+.landing-section {
+    padding: 35px 0;
+    position: relative;
+    background: #fdfbf8;
+}
+
+.landing-section:first-of-type {
+    padding-top: 55px;
+}
+
+.landing-section.bg-alt {
+    background: #ffffff;
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: #4a1c11;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    margin: 0 auto;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider::before {
+    content: "◈";
+    font-size: 14px;
+    color: #f59e0b;
+    background: #fdfbf8;
+    padding: 0 5px;
+}
+
+/* ==========================================================================
+   1. Problems Section
+   ========================================================================== */
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.problem-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 0 0 20px 0;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 15px 30px rgba(245, 158, 11, 0.1);
+}
+
+.pc-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    object-position: top;
+    background: #f0ebe1;
+    display: block;
+}
+
+.pc-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border: 2px solid #f59e0b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -25px auto 15px;
+    position: relative;
+    z-index: 2;
+    color: #d97706;
+    font-size: 1.2rem;
+}
+
+.problem-card h4 {
+    font-size: 1.1rem;
+    color: #4a1c11;
+    margin-bottom: 8px;
+    padding: 0 15px;
+}
+
+.problem-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+    padding: 0 15px;
+}
+
+/* ==========================================================================
+   2. Banner Section
+   ========================================================================== */
+.chart-banner {
+    background: linear-gradient(135deg, #fffcf6 0%, #fff6e5 50%, #fff1d6 100%);
+    border-radius: 20px;
+    padding: 18px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.08);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 52%;
+}
+
+.banner-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    color: #4a1c11;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.banner-content p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.banner-btn {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    color: #ffffff;
+    padding: 14px 42px;
+    min-width: 280px;
+    justify-content: center;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    animation: goldCtaGlowPulse 2.8s infinite ease-in-out;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35);
+}
+
+.banner-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    box-shadow: 0 14px 35px rgba(217, 119, 6, 0.6);
+    color: #ffffff;
+}
+
+.banner-right-img {
+    width: 46%;
+    max-height: 220px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(74, 28, 17, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.banner-right-img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   3. What is Naga Dosha
+   ========================================================================== */
+.what-is-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.what-is-img-container {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #d97706;
+    box-shadow: 0 15px 35px rgba(217, 119, 6, 0.15);
+    background: #1a1816;
+}
+
+.what-is-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.what-is-img-container:hover .what-is-img {
+    transform: scale(1.04);
+}
+
+.what-is-text h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: #4a1c11;
+    margin-bottom: 12px;
+}
+
+.what-is-text h3 .highlight-gold {
+    color: #d97706;
+}
+
+.what-is-text p {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.info-card-small {
+    background: #ffffff;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 14px;
+    padding: 22px 18px;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.info-card-small:hover {
+    transform: translateY(-4px);
+    border-color: #d97706;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.12);
+}
+
+.info-card-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(245, 158, 11, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.info-card-icon i {
+    color: #d97706;
+    font-size: 1.25rem;
+}
+
+.info-card-small h5 {
+    color: #4a1c11;
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.25;
+}
+
+.info-card-small p {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   4. Types of Naga Dosha
+   ========================================================================== */
+.types-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.types-wheel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.types-wheel-img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 35px rgba(245, 158, 11, 0.18));
+    transition: transform 0.4s ease;
+}
+
+.types-wheel-wrapper:hover .types-wheel-img {
+    transform: scale(1.015);
+}
+
+.types-info-card {
+    background: #fff8eb;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.tic-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.tic-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #4a1c11;
+    margin: 0;
+}
+
+.tic-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tic-badge {
+    background: #d97706;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.tic-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tic-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid #d97706;
+    color: #d97706;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(217, 119, 6, 0.15);
+}
+
+.tic-nav-btn:hover {
+    background: #d97706;
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(217, 119, 6, 0.3);
+}
+
+.tic-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    padding-bottom: 15px;
+}
+
+.tic-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.tic-tab.active {
+    color: #d97706;
+}
+
+.tic-desc {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.tic-effects {
+    margin-bottom: 25px;
+}
+
+.tic-effects h5 {
+    color: #4a1c11;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.tic-effects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tic-effects ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.tic-effects ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #d97706;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* ==========================================================================
+   5. Effects of Naga Dosha
+   ========================================================================== */
+.effects-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.effect-card {
+    background: #ffffff;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    padding: 0 0 16px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.effect-card:hover {
+    border-color: #d97706;
+    box-shadow: 0 12px 25px rgba(245, 158, 11, 0.15);
+    transform: translateY(-4px);
+}
+
+.effect-img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.effect-card h5 {
+    color: #4a1c11;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0 8px;
+}
+
+.btn-center-wrapper {
+    text-align: center;
+}
+
+/* ==========================================================================
+   6. Remedies Section
+   ========================================================================== */
+.remedies-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.remedies-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.remedy-card {
+    background: #ffffff;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.remedy-card .rc-icon {
+    font-size: 2rem;
+    color: #d97706;
+    margin-bottom: 10px;
+}
+
+.remedy-card h5 {
+    color: #4a1c11;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.remedy-card p {
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.consultation-img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.4s ease;
+    background: transparent;
+    align-self: flex-start;
+}
+
+.consultation-img-wrapper:hover {
+    transform: translateY(-4px) scale(1.015);
+}
+
+.consultation-full-img {
+    width: 100%;
+    height: 340px;
+    object-fit: fill;
+    object-position: center;
+    display: block;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.consultation-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.consultation-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.consultation-card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.consultation-card ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #d97706;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* ==========================================================================
+   7. FAQ & Related Searches (Redesigned & Premium)
+   ========================================================================== */
+.faq-redesigned-section {
+    padding: 70px 0 90px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fffcf6 50%, #faf6f0 100%);
+    position: relative;
+    border-top: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.footer-sections-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.section-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.header-badge-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.25);
+    flex-shrink: 0;
+}
+
+.header-badge-icon.icon-amber {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.faq-redesigned-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: #4a1c11;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.faq-redesigned-sub {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* FAQ Accordion Styling */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1.5px solid rgba(245, 158, 11, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+}
+
+.faq-item:hover {
+    border-color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.1);
+}
+
+.faq-item.active {
+    border-color: #d97706;
+    border-left: 5px solid #d97706;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.12);
+}
+
+.faq-question {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #3b1c10;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.faq-toggle-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    transition: transform 0.35s ease, background 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-toggle-btn {
+    transform: rotate(45deg);
+    background: #d97706;
+    color: #ffffff;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+    padding: 0 24px;
+    background: linear-gradient(180deg, #fffdfa 0%, #ffffff 100%);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 320px;
+    padding: 0 24px 22px 24px;
+    border-top: 1px dashed rgba(217, 119, 6, 0.2);
+}
+
+.faq-answer p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.65;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+/* Related Searches Panel */
+.related-panel-card {
+    background: linear-gradient(135deg, #fffcf5 0%, #fff6e5 100%);
+    border: 1.5px solid rgba(245, 158, 11, 0.25);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 15px 35px rgba(217, 119, 6, 0.08);
+}
+
+.related-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.related-chip {
+    background: #ffffff;
+    border: 1.5px solid rgba(217, 119, 6, 0.25);
+    border-radius: 30px;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #4a1c11;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.related-chip i {
+    font-size: 0.78rem;
+    color: #d97706;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.related-chip:hover {
+    background: #ffffff;
+    border-color: #d97706;
+    color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.22);
+}
+
+.related-chip:hover i {
+    color: #d97706;
+    transform: scale(1.15);
+}
+
+/* Related CTA Box */
+.related-cta-box {
+    background: #ffffff;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+}
+
+.rcb-header-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rcb-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(245, 158, 11, 0.12);
+    border-radius: 50%;
+    color: #d97706;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.rcb-title {
+    font-size: 0.95rem;
+    color: #4a1c11;
+    font-weight: 700;
+}
+
+.rcb-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    white-space: nowrap;
+    animation: goldCtaGlowPulse 2.8s infinite ease-in-out;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+    box-sizing: border-box;
+}
+
+.rcb-btn:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.5);
+}
+
+/* ==========================================================================
+   Responsive Media Queries for Landing Sections (Tablets & Mobile)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .remedies-grid {
+        align-items: flex-start !important;
+    }
+    .consultation-img-wrapper {
+        align-self: flex-start !important;
+    }
+    .consultation-full-img {
+        object-fit: fill !important;
+        height: 340px !important;
+    }
+    .problems-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .what-is-grid {
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+        align-items: stretch;
+    }
+    .what-is-text h3 {
+        font-size: 1.85rem;
+        margin-bottom: 8px;
+    }
+    .what-is-text p {
+        font-size: 0.88rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+    .what-is-img-container {
+        height: 100%;
+        min-height: 340px;
+    }
+    .info-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .info-card-small {
+        padding: 12px 14px;
+        min-height: 110px;
+    }
+    .info-card-icon {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 6px;
+    }
+    .info-card-icon i {
+        font-size: 1rem;
+    }
+    .info-card-small h5 {
+        font-size: 0.92rem;
+        margin-bottom: 3px;
+    }
+    .info-card-small p {
+        font-size: 0.78rem;
+        line-height: 1.35;
+    }
+    .related-chip:nth-child(n+5) {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .consultation-full-img {
+        height: auto !important;
+        max-height: 280px !important;
+        object-fit: contain !important;
+    }
+    .what-is-grid {
+        grid-template-columns: 270px 1fr !important;
+        gap: 20px !important;
+        align-items: stretch !important;
+    }
+    .what-is-img-container {
+        height: 100% !important;
+        min-height: 320px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .what-is-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .what-is-img-container {
+        height: 340px !important;
+        max-height: 380px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-sections-grid {
+        grid-template-columns: 1fr;
+    }
+    .chart-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+    .banner-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .banner-right-img {
+        width: 80%;
+        max-height: 180px;
+    }
+    .remedies-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .problems-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .remedies-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .effects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .problems-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .remedies-cards {
+        grid-template-columns: 1fr;
+    }
+    .effects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

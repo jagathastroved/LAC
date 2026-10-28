@@ -1,0 +1,3225 @@
+/* ============================================================
+   ASTROPEDIA — Moon Sign Calculator Stylesheet
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ── CSS Variables ────────────────────────────────────────── */
+:root {
+  --brand-orange: #e8821a;
+  --brand-orange-light: #f59c3c;
+  --brand-deep: #c4661a;
+  --nav-bg: #ffffff;
+  --nav-border: #e8e0d5;
+  --nav-text: #3a3a3a;
+  --nav-hover: #e8821a;
+  --breadcrumb-bg: #fdf6ee;
+  --breadcrumb-text: #6b5e4e;
+  --accent-gold: #d4a017;
+  --hero-bg: linear-gradient(135deg, #1a0a3d 0%, #2d1264 40%, #4a1a7a 70%, #6b2fa0 100%);
+  --card-bg: #ffffff;
+  --text-dark: #1e1e2e;
+  --text-muted: #6b6b85;
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --radius: 12px;
+  --transition: 0.25s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f5ef;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ── NAVBAR & HEADER STYLES ───────────────────────────────── */
+header,
+.header,
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.header-container,
+.navbar-inner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 60px;
+}
+
+/* Logo */
+.logo,
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo img,
+.navbar-logo img,
+.logo-img {
+  height: 36px !important;
+  max-height: 36px !important;
+  max-width: 200px !important;
+  width: auto !important;
+  display: block;
+  object-fit: contain;
+}
+
+/* Nav Links */
+.nav-links,
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+.nav-links>a,
+.dropdown>a,
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  height: 60px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.15s ease;
+  cursor: pointer;
+}
+
+.nav-links>a:hover,
+.dropdown>a:hover,
+.nav-links>a.active,
+.dropdown>a.active,
+.nav-link:hover,
+.nav-link.active {
+  color: #4f46e5;
+}
+
+.arrow-caret,
+.nav-links i.fa-caret-down {
+  font-size: 10px;
+  color: #64748b;
+  margin-left: 2px;
+}
+
+.badge-new,
+.nav-badge-blue {
+  font-size: 9px;
+  font-weight: 700;
+  color: #6366f1;
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  line-height: 1;
+}
+
+/* Dropdown Menu */
+.dropdown,
+.nav-item {
+  position: relative;
+}
+
+.dropdown-content,
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  padding: 6px 0;
+}
+
+.dropdown:hover .dropdown-content,
+.nav-item:hover .dropdown-menu {
+  display: block;
+  animation: dropIn 0.18s ease;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content a,
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #334155;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-content a:hover,
+.dropdown-menu a:hover {
+  background: #f8fafc;
+  color: #4f46e5;
+}
+
+/* Header Actions / Navbar Right */
+.header-actions,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  display: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.icon-link,
+.nav-location,
+.nav-date,
+.nav-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-link:hover,
+.nav-location:hover,
+.nav-date:hover {
+  color: #4f46e5;
+}
+
+.icon-link i {
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.action-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.mobile-nav-toggle,
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #1e293b;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger.open span {
+  background: #e8821a;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Backdrop Overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 1280px) {
+  .navbar-nav {
+    display: none !important;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: auto;
+    width: 280px;
+    max-width: 85vw;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 0;
+    box-shadow: -8px 16px 36px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.06);
+    z-index: 1001;
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid rgba(226, 232, 240, 0.7);
+    border-top: none;
+    animation: sideDrawerIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes sideDrawerIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .navbar-nav.open {
+    display: flex !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    position: relative;
+  }
+
+  .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    border-bottom: 1px solid #f8fafc;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-item.active-mobile-dropdown > .nav-link {
+    color: #4f46e5;
+    background: #f8fafc;
+  }
+
+  .navbar-nav .arrow-caret {
+    font-size: 10px;
+    color: #475569;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .navbar-nav .nav-item.active-mobile-dropdown .arrow-caret {
+    transform: rotate(180deg);
+    color: #4f46e5;
+  }
+
+  .navbar-nav .nav-badge-blue {
+    position: static;
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    color: #6366f1;
+  }
+
+  .navbar-nav .dropdown-menu {
+    display: none;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: #f8fafc;
+    padding: 4px 12px;
+    width: auto;
+    margin: 4px 16px 8px;
+    border-radius: 8px;
+  }
+
+  .navbar-nav .dropdown-menu a {
+    display: block;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: #475569;
+    font-weight: 500;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .navbar-nav .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-nav .nav-item .dropdown-menu {
+    display: none !important;
+  }
+
+  .navbar-nav .nav-item.active-mobile-dropdown .dropdown-menu {
+    display: block !important;
+  }
+
+  .header-actions {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+}
+
+/* ── HOME BANNER HERO SECTION ─────────────────────────────── */
+.banner-hero {
+  position: relative;
+  background: url('../assests/banner-web.png') no-repeat center center / cover;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 50px 20px 40px;
+}
+
+/* Floating breadcrumb top left */
+.banner-breadcrumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(253, 248, 242, 0.92);
+  backdrop-filter: blur(4px);
+  padding: 8px 24px;
+  border-bottom-right-radius: 20px;
+  font-size: 0.82rem;
+  color: #666;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+}
+
+.banner-breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.banner-breadcrumb a:hover {
+  color: var(--brand-orange);
+}
+
+.banner-breadcrumb span {
+  color: #111827;
+  font-weight: 700;
+}
+
+.banner-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner-content {
+  max-width: 620px;
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.banner-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.banner-title .highlight-purple {
+  color: #a855f7;
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Star & Moon Divider Line */
+.banner-moon-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px auto 28px;
+  max-width: 580px;
+}
+
+.star-mark {
+  color: #d97706;
+  font-size: 0.9rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, rgba(217, 119, 6, 0.2), rgba(217, 119, 6, 0.7), rgba(217, 119, 6, 0.2));
+}
+
+.crescent-icon {
+  font-size: 1.3rem;
+  color: #d97706;
+}
+
+.banner-desc {
+  font-size: 1.15rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 auto 40px;
+  max-width: 680px;
+  font-weight: 400;
+}
+
+/* 2x2 Feature Cards */
+.banner-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(233, 213, 255, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+}
+
+.feature-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-text strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e1b4b;
+  line-height: 1.3;
+}
+
+.feature-text span {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* Purple CTA Button */
+.banner-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-cta-purple-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5046e5 0%, #a855f7 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 18px 56px;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.35);
+  transition: all 0.25s ease;
+}
+
+.banner-cta-purple-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.48);
+}
+
+/* Micro Trust Badges */
+.banner-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.badge-item svg {
+  color: #7c3aed;
+}
+
+/* ── CALCULATOR CARD ──────────────────────────────────────── */
+.main-content {
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.calculator-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #e8821a, #f59c3c);
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card-header p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin-top: 2px;
+}
+
+.card-body {
+  padding: 36px 32px;
+}
+
+/* ── Form ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a4a5a;
+  letter-spacing: 0.3px;
+}
+
+.form-group label .req {
+  color: var(--brand-orange);
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: #fafafa;
+  border: 1.5px solid #e0d8d0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  appearance: none;
+}
+
+.form-control:focus {
+  border-color: var(--brand-orange);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(232, 130, 26, 0.12);
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e8821a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.time-grid select {
+  font-size: 0.82rem;
+}
+
+/* ── Submit Button ── */
+.btn-calculate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  margin-top: 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #e8821a 0%, #c4661a 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(232, 130, 26, 0.4);
+}
+
+.btn-calculate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232, 130, 26, 0.5);
+}
+
+.btn-calculate:active {
+  transform: translateY(0);
+}
+
+/* ── Result Panel ── */
+.result-panel {
+  display: none;
+  margin-top: 32px;
+  background: linear-gradient(135deg, #1a0a3d 0%, #2d1264 100%);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  animation: fadeUp 0.5s ease;
+}
+
+.result-panel.show {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-moon-sign {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.result-title {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.result-sign-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: -0.5px;
+}
+
+.result-rashi {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+.result-desc {
+  margin-top: 18px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-traits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.trait-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* ── INFO CARDS ───────────────────────────────────────────── */
+.info-section {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #e8821a22, transparent);
+}
+
+.signs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.sign-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  border: 1.5px solid #ede4d8;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.sign-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-orange);
+  box-shadow: 0 8px 24px rgba(232, 130, 26, 0.15);
+}
+
+.sign-emoji {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.sign-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.sign-rashi {
+  font-size: 0.72rem;
+  color: var(--brand-orange);
+  margin-top: 2px;
+}
+
+.sign-element {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer {
+  background: #1a1a2e;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 32px 20px 20px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  margin-bottom: 8px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 14px 0;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--brand-orange);
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 12px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .action-text {
+    display: none;
+  }
+
+  .banner-hero {
+    background-position: left -40px center;
+    padding-top: 45px;
+    padding-bottom: 35px;
+    min-height: 480px;
+  }
+
+  .banner-container {
+    justify-content: flex-end;
+  }
+
+  .banner-content {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    padding-top: 0;
+    margin-left: auto;
+    transform: translateY(-10px);
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+  
+  .banner-desc {
+    font-size: 1.05rem;
+    max-width: 460px;
+    margin-bottom: 26px;
+  }
+  
+  .banner-cta-purple-btn {
+    font-size: 1.1rem;
+    padding: 14px 44px;
+  }
+
+  .banner-moon-divider {
+    max-width: 340px;
+    margin: 18px auto 22px;
+  }
+}
+
+@media (max-width: 850px) {
+  .banner-hero {
+    background-position: left -90px center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    min-height: 440px;
+  }
+
+  .banner-container {
+    justify-content: flex-end;
+  }
+
+  .banner-content {
+    max-width: 410px;
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
+    transform: translateY(-6px);
+  }
+
+  .banner-title {
+    font-size: 2.15rem;
+  }
+
+  .banner-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 380px;
+    margin: 0 auto 24px;
+  }
+
+  .banner-cta-wrap {
+    justify-content: center;
+  }
+
+  .banner-cta-purple-btn {
+    font-size: 1rem;
+    padding: 13px 34px;
+  }
+
+  .banner-moon-divider {
+    max-width: 290px;
+    margin: 14px auto 18px;
+  }
+
+  .signs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-hero {
+    background-position: center top;
+    background-size: cover;
+    padding: 50px 16px 30px;
+    min-height: auto;
+  }
+
+  .banner-container {
+    justify-content: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    padding: 24px 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transform: none;
+  }
+
+  .banner-title {
+    font-size: 1.85rem;
+  }
+
+  .banner-desc {
+    font-size: 0.9rem;
+  }
+
+  .banner-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-body {
+    padding: 24px 18px;
+  }
+
+  .signs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .result-panel {
+    padding: 24px 18px;
+  }
+
+  .result-sign-name {
+    font-size: 1.7rem;
+  }
+}
+
+/* ── WHY FIND YOUR MOON SIGN SECTION ──────────────────────── */
+.why-moon-sign {
+  padding: 26px 20px 30px;
+  background: linear-gradient(180deg, #fdfaf6 0%, #f7f1e8 100%);
+  text-align: center;
+  position: relative;
+  border-top: 1px solid rgba(235, 222, 208, 0.5);
+}
+
+.why-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.why-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #321d56;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.why-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 18px;
+  max-width: 180px;
+}
+
+.why-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(217, 119, 6, 0.1), rgba(217, 119, 6, 0.5), rgba(217, 119, 6, 0.1));
+}
+
+.why-divider .star-mark {
+  color: #d97706;
+  font-size: 0.75rem;
+}
+
+.why-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.why-card {
+  background: #fffdfa;
+  border: 1px solid #f0e4d7;
+  border-radius: 14px;
+  padding: 16px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+  border-color: #d8b4fe;
+  background: #ffffff;
+}
+
+.why-card-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-card-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(124, 58, 237, 0.1));
+  transition: transform 0.25s ease;
+}
+
+.why-card:hover .why-card-icon img {
+  transform: scale(1.08);
+}
+
+.why-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e1438;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.why-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  color: #5c536e;
+  line-height: 1.38;
+  font-weight: 400;
+}
+
+/* ── Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .why-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-moon-sign {
+    padding: 20px 12px 24px;
+  }
+
+  .why-title {
+    font-size: 1.35rem;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .why-card {
+    padding: 14px 8px 12px;
+  }
+}
+
+@media (max-width: 440px) {
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .why-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── WHAT IS MOON SIGN SECTION ────────────────────────────── */
+.what-is-moon-sign {
+  padding: 40px 24px 44px;
+  background: #ffffff;
+  border-top: 1px solid rgba(235, 222, 208, 0.4);
+}
+
+.what-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.what-image-wrap {
+  flex: 0 0 36%;
+  max-width: 420px;
+  min-width: 270px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.08);
+  border: 2px solid #ffffff;
+  display: flex;
+}
+
+.what-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.what-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.what-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.crescent-moon-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.what-title .highlight-purple {
+  color: #a855f7;
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.what-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 760px;
+}
+
+.what-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.what-card {
+  background: #ffffff;
+  border: 1px solid #f2e7dc;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.what-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.09);
+  border-color: #d8b4fe;
+}
+
+.what-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.what-card-icon svg {
+  stroke: #7c3aed;
+}
+
+.what-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e1438;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.what-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #5c536e;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* ── Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .what-container {
+    gap: 24px;
+  }
+
+  .what-image-wrap {
+    flex: 0 0 320px;
+    max-width: 320px;
+  }
+
+  .what-title {
+    font-size: 1.65rem;
+  }
+
+  .what-desc {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .what-container {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .what-image-wrap {
+    flex: 0 0 280px;
+    max-width: 280px;
+    min-width: 240px;
+    border-radius: 18px;
+  }
+
+  .what-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .what-card {
+    padding: 14px;
+  }
+
+  .what-card-title {
+    font-size: 0.88rem;
+  }
+
+  .what-card-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .what-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .what-image-wrap {
+    flex: none;
+    max-width: 100%;
+    height: 260px;
+    margin: 0 auto;
+  }
+
+  .what-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .what-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* ── HOW MOON SIGN CALCULATOR WORKS SECTION ───────────────── */
+.how-it-works {
+  padding: 36px 24px 44px;
+  background: linear-gradient(180deg, #fdfaf6 0%, #f7f1e8 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(235, 222, 208, 0.5);
+}
+
+.how-it-works::before,
+.how-it-works::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(217, 119, 6, 0.08) 2px, transparent 2px),
+    radial-gradient(circle, rgba(43, 20, 84, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px, 10px 10px;
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.how-it-works::before {
+  left: -50px;
+}
+
+.how-it-works::after {
+  right: -50px;
+}
+
+.how-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.how-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2b1454;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.how-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 30px;
+  max-width: 180px;
+}
+
+.how-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(217, 119, 6, 0.1), rgba(217, 119, 6, 0.5), rgba(217, 119, 6, 0.1));
+}
+
+.how-divider .star-mark {
+  color: #d97706;
+  font-size: 0.75rem;
+}
+
+.how-steps-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.how-step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+}
+
+.step-icon-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.step-badge {
+  position: absolute;
+  top: -4px;
+  left: -8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #d97706;
+  color: #d97706;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.15);
+  z-index: 3;
+}
+
+.step-icon-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #f1e6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step-icon-circle svg {
+  width: 42px;
+  height: 42px;
+}
+
+.how-step-item:hover .step-icon-circle {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.16);
+}
+
+.step-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e1438;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #5c536e;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .how-steps-flow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 16px;
+  }
+
+  .step-arrow {
+    display: none;
+  }
+
+  .how-step-item {
+    flex: 0 0 calc(33.33% - 16px);
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .how-step-item {
+    flex: 0 0 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 440px) {
+  .how-step-item {
+    flex: 0 0 100%;
+    max-width: 260px;
+  }
+}
+
+/* ── THE MOON SIGNS SECTION ───────────────────────────────── */
+.the-moon-signs {
+  padding: 44px 24px 50px;
+  background: #ffffff;
+  border-top: 1px solid rgba(235, 222, 208, 0.4);
+  text-align: center;
+}
+
+.moon-signs-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.moon-signs-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2b1454;
+  letter-spacing: -0.2px;
+  margin-bottom: 8px;
+}
+
+.moon-signs-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 auto 32px;
+  max-width: 760px;
+  font-weight: 500;
+}
+
+.moon-signs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.moon-sign-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  height: 84px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.moon-sign-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.12);
+  border-color: #a855f7;
+}
+
+.moon-sign-icon-wrap {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon-sign-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(109, 40, 217, 0.2));
+  transition: transform 0.25s ease;
+}
+
+.moon-sign-card:hover .moon-sign-img {
+  transform: scale(1.08);
+}
+
+.moon-sign-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.moon-sign-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e1438;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.moon-sign-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #64748b;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+/* ── Responsive Breakpoints for The Moon Signs ── */
+@media (max-width: 1200px) {
+  .moon-signs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .the-moon-signs {
+    padding: 32px 16px 36px;
+  }
+
+  .moon-signs-title {
+    font-size: 1.7rem;
+  }
+
+  .moon-signs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moon-signs-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .moon-sign-card {
+    padding: 12px;
+  }
+}
+
+/* ── LET THE MOON GUIDE YOUR LIFE CTA SECTION ─────────────── */
+.moon-guide-section {
+  padding: 30px 20px 50px;
+  background: #ffffff;
+}
+
+.moon-guide-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.moon-guide-banner {
+  background: url('../assests/images-2/cta_image.png') no-repeat center center / cover;
+  border-radius: 24px;
+  padding: 24px 28px 26px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(30, 11, 60, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon-phases-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 6px;
+}
+
+.moon-phases-ornament .full-moon {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+}
+
+.moon-guide-title {
+  font-family: 'Playfair Display', Georgia, 'Poppins', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.moon-guide-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.45;
+  max-width: 640px;
+  margin: 0 auto 18px;
+  font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.moon-guide-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.moon-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 22px 5px 5px;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.moon-guide-btn:hover {
+  transform: translateY(-3px);
+}
+
+.moon-guide-btn.btn-purple {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45), 0 0 14px rgba(255, 255, 255, 0.25);
+}
+
+.moon-guide-btn.btn-purple:hover {
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.65), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.moon-guide-btn.btn-purple .btn-text {
+  color: #ffffff;
+}
+
+.moon-guide-btn.btn-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5), 0 0 14px rgba(254, 240, 138, 0.4);
+}
+
+.moon-guide-btn.btn-gold:hover {
+  box-shadow: 0 12px 32px rgba(217, 119, 6, 0.65), 0 0 20px rgba(254, 240, 138, 0.5);
+}
+
+.moon-guide-btn.btn-gold .btn-text {
+  color: #1e1b4b;
+}
+
+.btn-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 768px) {
+  .moon-guide-banner {
+    padding: 32px 20px 28px;
+    border-radius: 20px;
+  }
+
+  .moon-guide-title {
+    font-size: 1.65rem;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .moon-guide-desc {
+    font-size: 0.86rem;
+    margin-bottom: 22px;
+  }
+
+  .moon-guide-buttons {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .moon-guide-btn {
+    flex: 0 1 auto;
+    max-width: 340px;
+    padding: 5px 16px 5px 5px;
+    justify-content: flex-start;
+  }
+
+  .moon-guide-btn .btn-text {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 540px) {
+  .moon-guide-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .moon-guide-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .moon-guide-btn .btn-text {
+    white-space: normal;
+  }
+}
+
+/* ── FAQ & RELATED SEARCHES SECTION ──────────────────────── */
+.faq-related-section {
+  padding: 50px 24px 60px;
+  background: #ffffff;
+  border-top: 1px solid rgba(235, 222, 208, 0.4);
+}
+
+.faq-related-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Common Card Containers */
+.faq-card-wrap {
+  background: #fffdfa;
+  border: none;
+  border-radius: 24px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.related-searches-card {
+  background: #fffdfa;
+  border: none;
+  border-radius: 24px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Standardized Section Card Headers */
+.card-header-block {
+  margin-bottom: 16px;
+}
+
+.faq-title,
+.related-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e1438;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.faq-subtitle,
+.related-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* FAQ Left Column Accordion */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.faq-item:hover {
+  border-color: #cbd5e1;
+}
+
+.faq-item.active {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 15px 18px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e1438;
+  cursor: pointer;
+  outline: none;
+}
+
+.faq-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #a855f7;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 12px;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  background: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 18px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.55;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 2px;
+  padding-top: 12px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Related Tags Grid */
+.related-searches-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.related-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.related-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.related-tag-pill:hover {
+  border-color: #a855f7;
+  color: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+}
+
+/* Talk to Astrologer Card (Nested Inside Related Searches) */
+.talk-astrologer-card {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border: 1px solid #d8b4fe;
+  border-radius: 18px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+  margin-top: auto;
+}
+
+.talk-content {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.talk-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.talk-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15);
+}
+
+.talk-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.talk-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #5b21b6;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.btn-consult-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-consult-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+.talk-image-wrap {
+  display: none !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .faq-related-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .related-searches-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .related-searches-top {
+    flex: none;
+    width: 100%;
+  }
+
+  .related-tags-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .related-tag-pill {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .talk-astrologer-card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px 18px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 860px) {
+  .faq-related-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .related-searches-card {
+    flex-direction: column;
+  }
+
+  .related-tags-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .talk-astrologer-card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .talk-astrologer-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ============================================================
+   ASTROPEDIA — Moon Sign Calculator Modal & Result Styles
+   ============================================================ */
+
+/* ============================================================
+   ASTROPEDIA — Inline Below-Banner Calculator Section
+   ============================================================ */
+.calculator-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 25;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  scroll-margin-top: 110px;
+}
+
+.calculator-section.closing {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.98);
+}
+
+.calculator-container {
+  max-width: 1020px;
+  margin: -18px auto 40px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 30;
+}
+
+.premium-naga-form-container {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -15px rgba(30, 27, 75, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 1px rgba(168, 85, 247, 0.25);
+  padding: 32px 40px 28px 40px;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.premium-naga-form-container:hover {
+  box-shadow: 0 30px 70px -15px rgba(30, 27, 75, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 1), 0 0 0 1px rgba(168, 85, 247, 0.4);
+}
+
+.btn-dismiss {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #ffffff;
+  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+.btn-dismiss:hover {
+  background: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+  transform: rotate(90deg) scale(1.05);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+/* Modal Header Block */
+.modal-header-block-new {
+  padding: 32px 30px 0 30px;
+  text-align: center;
+}
+
+.premium-naga-title {
+  text-align: center;
+  color: #1e1b4b;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.om-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.8rem;
+}
+
+.om-symbol {
+  color: #9333ea;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  animation: omGentleBreathe 3s ease-in-out infinite alternate;
+}
+
+@keyframes omGentleBreathe {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 4px rgba(147, 51, 234, 0.25));
+  }
+
+  100% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 10px rgba(147, 51, 234, 0.5));
+  }
+}
+
+.om-line {
+  height: 1.5px;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
+}
+
+/* Modal Body */
+.modal-card-body {
+  padding: 0 40px 32px 40px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Grid Layout matching exact screenshot */
+.modern-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.modern-fg {
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-fg label {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.modern-fg:focus-within label {
+  color: #7c3aed;
+}
+
+.modern-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #faf8ff;
+  border: 1.5px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modern-input-wrapper:hover {
+  border-color: #7c3aed;
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.12);
+}
+
+.modern-input-wrapper:focus-within {
+  border-color: #7c3aed;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.18), 0 0 0 3px rgba(168, 85, 247, 0.15);
+  transform: translateY(-2px);
+}
+
+.modern-input-wrapper>i {
+  position: absolute;
+  left: 16px;
+  color: #7c3aed;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.modern-input-wrapper:focus-within>i {
+  color: #5b21b6;
+  transform: scale(1.15);
+}
+
+.modern-input-wrapper input,
+.modern-input-wrapper select {
+  width: 100%;
+  padding: 14px 15px 14px 46px;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #2a2a2a;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+.modern-input-wrapper input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Custom Select Dropdown */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #333;
+  width: 100%;
+  padding: 2px 0;
+}
+
+.custom-select-trigger .drop-icon {
+  position: static;
+  transform: none;
+  transition: transform 0.3s ease;
+}
+
+.custom-select-wrapper.open .custom-select-trigger .drop-icon {
+  transform: rotate(180deg);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  width: calc(100% + 30px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  margin-top: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.custom-select-wrapper.open .custom-select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.custom-option {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-option:hover {
+  background: #f3e8ff;
+  color: #7c3aed;
+  padding-left: 25px;
+}
+
+/* Multi Input Styling (DOB & Time) */
+.multi-input-modern {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px 8px 48px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.multi-input-modern input {
+  padding: 6px 0;
+  width: 38px !important;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #2a2a2a;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.multi-input-modern input[placeholder="YYYY"] {
+  width: 58px !important;
+}
+
+.multi-input-modern input:focus {
+  color: #7c3aed;
+}
+
+.multi-input-modern .sep {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+/* Submit Button - Cosmic Purple Gradient matching website theme */
+.btn-submit-modern {
+  grid-column: span 3;
+  margin: 12px auto 0 auto;
+  width: 100%;
+  max-width: 340px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #4c1d95 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit-modern:hover {
+  transform: translateY(-2px) scale(1.01);
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  box-shadow: 0 14px 35px rgba(124, 58, 237, 0.6);
+}
+
+.btn-submit-modern i {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-submit-modern:hover i {
+  transform: translateX(6px);
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    margin: -10px auto 20px auto;
+    padding: 0 12px;
+  }
+
+  .modern-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .btn-submit-modern {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .modal-card-body {
+    padding: 0 20px 24px 20px;
+  }
+}
+
+.modal-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ── ULTRA-PREMIUM RESULT STEP STYLES ────────────────────────── */
+.result-container-card {
+  background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+  border-radius: 20px;
+  border: 1.5px solid rgba(168, 85, 247, 0.25);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
+}
+
+/* Simple Results Table */
+.result-simple-table {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.rst-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3e8ff;
+}
+
+.rst-row:last-child {
+  border-bottom: none;
+}
+
+.rst-label {
+  flex: 0 0 40%;
+  padding: 16px 20px;
+  background: #faf5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b21a8;
+  border-right: 1px solid #e9d5ff;
+}
+
+.rst-value {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+/* Simple Horoscope CTA */
+.result-simple-horoscope {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.result-simple-horoscope p {
+  color: #4b5563;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.result-simple-horoscope strong {
+  color: #7c3aed;
+}
+
+.btn-view-horoscope-simple {
+  background: #7c3aed;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-view-horoscope-simple:hover {
+  background: #6d28d9;
+}
+
+/* 4-Grid Birth Details Cards */
+.result-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.res-detail-card {
+  background: #ffffff;
+  border: 1.5px solid #f3e8ff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.04);
+  transition: all 0.25s ease;
+}
+
+.res-detail-card:hover {
+  transform: translateY(-2px);
+  border-color: #a855f7;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+}
+
+.res-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f3e8ff;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.res-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.res-card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b21a8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.res-card-val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e1b4b;
+}
+
+/* Horoscope Banner CTA */
+.result-horoscope-banner {
+  background: linear-gradient(135deg, #f3e8ff 0%, #fae8ff 100%);
+  border: 1.5px solid #e9d5ff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.12);
+  margin-bottom: 20px;
+}
+
+.rh-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+}
+
+.rh-text-wrap {
+  flex: 1;
+}
+
+.rh-text-wrap h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 2px;
+}
+
+.rh-text-wrap p {
+  font-size: 0.82rem;
+  color: #6b21a8;
+  line-height: 1.35;
+}
+
+.rh-text-wrap strong {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.btn-view-horoscope-purple {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-view-horoscope-purple:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.5);
+}
+
+/* Action Controls */
+.result-action-row {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-recalc-purple-outline {
+  width: 100%;
+  max-width: 360px;
+  padding: 12px 20px;
+  background: #ffffff;
+  border: 1.5px solid #d8b4fe;
+  border-radius: 12px;
+  color: #7c3aed;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-recalc-purple-outline:hover {
+  background: #f3e8ff;
+  border-color: #7c3aed;
+  color: #5b21b6;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .result-zodiac-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .zodiac-trait-chips {
+    justify-content: center;
+  }
+
+  .result-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-horoscope-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-view-horoscope-purple {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.btn-recalc-outline {
+  width: 100%;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-recalc-outline:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+/* ── HOROSCOPE DETAIL MODAL ───────────────────────────────── */
+.astro-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.astro-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.astro-modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(30, 27, 75, 0.35);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.astro-modal-overlay.active .astro-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header-block {
+  padding: 24px 28px;
+  position: relative;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%) !important;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.modal-header-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.modal-header-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.horo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.horo-card-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.horo-card-item h4 {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.horo-card-item p {
+  font-size: 0.92rem;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.horo-badge-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.horo-badge {
+  flex: 1;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.horo-badge strong {
+  display: block;
+  font-size: 0.78rem;
+  color: #166534;
+}
+
+.horo-badge span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+/* Keyframes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Spinner Icon */
+.spinner-icon {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

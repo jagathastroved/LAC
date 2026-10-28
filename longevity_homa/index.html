@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Homa | Longevity, Vitality & Sacred Vedic Fire Ritual</title>
+    <meta name="description"
+        content="Perform Ayush Homa, a sacred Vedic fire ritual invoked for long life, good health, immunity, vitality, and overall well-being by erudite Vedic priests.">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Home Banner Section with Deities on Left & Clean Content on Right -->
+    <section class="home-banner" id="home">
+        <div class="banner-overlay-container">
+            <div class="container banner-flex-layout">
+
+                <!-- Left Space for Deities & Sacred Fire (56% Width) -->
+                <div class="banner-left-visual"></div>
+
+                <!-- Right Content Section Matching Reference Image (44% Width) -->
+                <div class="banner-right-content">
+
+                    <h1 class="banner-main-title">Ayush Homa</h1>
+                    <div class="banner-title-divider">
+                        <svg width="320" height="16" viewBox="0 0 320 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8H145" stroke="url(#lineGradLeft)" stroke-width="1.5" />
+                            <circle cx="152" cy="8" r="1.5" fill="#d96b27" />
+                            <rect x="157" y="5" width="6" height="6" rx="1" transform="rotate(45 160 8)" fill="none"
+                                stroke="#d96b27" stroke-width="1.5" />
+                            <circle cx="160" cy="8" r="1" fill="#c43c14" />
+                            <circle cx="168" cy="8" r="1.5" fill="#d96b27" />
+                            <path d="M175 8H320" stroke="url(#lineGradRight)" stroke-width="1.5" />
+                            <defs>
+                                <linearGradient id="lineGradLeft" x1="0" y1="8" x2="145" y2="8"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                    <stop offset="1" stop-color="#d96b27" />
+                                </linearGradient>
+                                <linearGradient id="lineGradRight" x1="175" y1="8" x2="320" y2="8"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#d96b27" />
+                                    <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <h2 class="banner-sub-headline">Longevity, Vitality & Well-Being</h2>
+
+                    <p class="banner-body-text">
+                        Ayush Homa is a powerful Vedic fire ritual performed to invoke divine blessings for long life,
+                        good health, vitality, strength and overall well-being.
+                    </p>
+
+                    <!-- Transformation Flow Showcase (Circular Cards with Gold/Terracotta Theme) -->
+                    <div class="banner-transformation-wrapper">
+                        <div class="transformation-flow-container">
+
+                            <!-- Card 1 -->
+                            <div class="transformation-card">
+                                <div class="trans-img-circle">
+                                    <img src="assests/trans1.png" alt="Stress &amp; Worries">
+                                </div>
+                                <div class="trans-caption">Stress &amp; Worries</div>
+                            </div>
+
+                            <!-- Arrow 1 -->
+                            <div class="transformation-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                            <!-- Card 2 (Center Ritual) -->
+                            <div class="transformation-card">
+                                <div class="trans-img-circle trans-circle-highlight">
+                                    <img src="assests/trans2.png" alt="Ayush Homa Ritual">
+                                </div>
+                                <div class="trans-caption trans-caption-highlight">Ayush Homa Ritual</div>
+                            </div>
+
+                            <!-- Arrow 2 -->
+                            <div class="transformation-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="transformation-card">
+                                <div class="trans-img-circle">
+                                    <img src="assests/trans3.png" alt="Renewed Energy &amp; Inner Peace">
+                                </div>
+                                <div class="trans-caption">Renewed Energy<br>&amp; Inner Peace</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Dual CTA Buttons -->
+                    <div class="banner-cta-actions">
+                        <button class="btn-book-homa-main" onclick="scrollToSection('packages')">
+                            Book Ayush Homa
+                        </button>
+
+                        <a href="#about" class="btn-know-more-main">
+                            Know More
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Sticky Navigation Bar
+       ========================================================================== -->
+    <nav class="subnav-sticky">
+        <div class="container subnav-container-flex">
+            <button class="subnav-arrow-btn left-arrow" id="subnavPrevBtn" onclick="scrollSubnavTab(-1)" aria-label="Scroll left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="subnav-tabs" id="subnavTabsTrack">
+                <button class="tab-btn active" data-section="about" onclick="scrollToSection('about', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>About Homa</span>
+                </button>
+                <button class="tab-btn" data-section="benefits" onclick="scrollToSection('benefits', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Benefits</span>
+                </button>
+                <button class="tab-btn" data-section="process" onclick="scrollToSection('process', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Process</span>
+                </button>
+                <button class="tab-btn" data-section="temple" onclick="scrollToSection('temple', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Temple Details</span>
+                </button>
+                <button class="tab-btn" data-section="packages" onclick="scrollToSection('packages', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Packages</span>
+                </button>
+                <button class="tab-btn" data-section="why-astroved" onclick="scrollToSection('why-astroved', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Why AstroVed</span>
+                </button>
+                <button class="tab-btn" data-section="reviews" onclick="scrollToSection('reviews', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>Reviews</span>
+                </button>
+                <button class="tab-btn" data-section="faqs" onclick="scrollToSection('faqs', this)">
+                    <img src="assests/fire1.webp" class="nav-fire-img" alt="Fire Icon">
+                    <span>FAQs</span>
+                </button>
+            </div>
+
+            <button class="subnav-arrow-btn right-arrow" id="subnavNextBtn" onclick="scrollSubnavTab(1)" aria-label="Scroll right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+       About Homa Section
+       ========================================================================== -->
+    <section class="section-padding section-bg-white" id="about">
+        <div class="container">
+            <div class="about-grid">
+
+                <!-- Left Content -->
+                <div class="about-text-content">
+                    <h3 class="about-main-heading">Ayush Homa – A Sacred Vedic Ritual</h3>
+                    <p class="about-desc-text">
+                        Ayush Homa is a sacred Vedic fire ritual performed by erudite priests to invoke divine blessings
+                        for longevity, vitality, good health and overall well-being.
+                    </p>
+                    <p class="about-desc-text">
+                        The ritual involves chanting of powerful Vedic mantras and offering oblations into the sacred
+                        fire, seeking the blessings of Lord Dhanvantari, the divine physician, and other deities
+                        associated with health and longevity.
+                    </p>
+
+                    <div class="scripture-box">
+                        <div class="scripture-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 19.5C4 18.6716 4.67157 18 5.5 18H19.5C19.5 18 20 18 20 17.5V4.5C20 4 19.5 4 19.5 4H5.5C4.67157 4 4 4.67157 4 5.5V19.5Z"
+                                    stroke="#c43c14" stroke-width="2" />
+                                <path d="M12 4V18" stroke="#c43c14" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="scripture-info">
+                            <div class="scripture-label">Scriptural Reference</div>
+                            <div class="sanskrit-verse">आयुष्मान् भवन्तु || (Rigveda 10.97.1)</div>
+                            <div class="scripture-meaning">Meaning: May you be blessed with long life.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Video Showcase Card -->
+                <div class="about-video-wrapper"
+                    style="border-radius: 20px; overflow: hidden; box-shadow: 0 12px 36px rgba(74, 21, 12, 0.15); border: 2px solid #ebd6b5; height: fit-content; align-self: center;">
+                    <video src="assests/Ayush Homa.mp4" autoplay loop muted controls
+                        style="width: 100%; display: block; border-radius: inherit;"></video>
+                </div>
+
+            </div>
+    </section>
+    <!-- ==========================================================================
+       Puja Benefits Section (Exact Match to Reference Image)
+       ========================================================================== -->
+    <section class="section-padding section-bg-white" id="benefits">
+        <div class="container">
+
+            <!-- Integrated Benefits Outer Box with Floating Title -->
+            <div class="benefits-outer-card">
+
+                <div class="benefits-card-header">
+                    <h2 class="benefits-card-title">Homa Benefits</h2>
+                    <div class="benefits-title-divider">
+                        <svg width="260" height="12" viewBox="0 0 260 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 6H115" stroke="url(#bLineLeft)" stroke-width="1.5" />
+                            <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                            <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                            <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                                stroke="#d96b27" stroke-width="1.2" />
+                            <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                            <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                            <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                            <path d="M145 6H260" stroke="url(#bLineRight)" stroke-width="1.5" />
+                            <defs>
+                                <linearGradient id="bLineLeft" x1="0" y1="6" x2="115" y2="6"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                    <stop offset="1" stop-color="#d96b27" />
+                                </linearGradient>
+                                <linearGradient id="bLineRight" x1="145" y1="6" x2="260" y2="6"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#d96b27" />
+                                    <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="benefits-5col-row">
+
+                    <!-- Col 1: Good Health -->
+                    <div class="benefit-col-unit">
+                        <div class="benefit-col-icon">
+                            <img src="assests/good_health.webp" class="benefit-img-icon" width="64" height="64"
+                                alt="Good Health">
+                        </div>
+                        <h4 class="unit-title">Blessings for<br>Good Health</h4>
+                        <p class="unit-desc">Invokes divine blessings for good health and protection from
+                            illnesses.</p>
+                    </div>
+
+                    <div class="unit-divider">
+                        <span class="divider-dot">◆</span>
+                    </div>
+
+                    <!-- Col 2: Longevity -->
+                    <div class="benefit-col-unit">
+                        <div class="benefit-col-icon">
+                            <img src="assests/longevity.webp" class="benefit-img-icon" width="64" height="64"
+                                alt="Longevity">
+                        </div>
+                        <h4 class="unit-title">Prayers for<br>Longevity</h4>
+                        <p class="unit-desc">Lord Dhanvantari is worshipped for bestowing long life and
+                            vitality.</p>
+                    </div>
+
+                    <div class="unit-divider">
+                        <span class="divider-dot">◆</span>
+                    </div>
+
+                    <!-- Col 3: Overall Well-Being -->
+                    <div class="benefit-col-unit">
+                        <div class="benefit-col-icon">
+                            <img src="assests/well_being.webp" class="benefit-img-icon" width="64" height="64"
+                                alt="Overall Well-Being">
+                        </div>
+                        <h4 class="unit-title">Overall<br>Well-Being</h4>
+                        <p class="unit-desc">Brings balance to body, mind & soul for overall well-being and
+                            happiness.</p>
+                    </div>
+
+                    <div class="unit-divider">
+                        <span class="divider-dot">◆</span>
+                    </div>
+
+                    <!-- Col 4: Family Well-being -->
+                    <div class="benefit-col-unit">
+                        <div class="benefit-col-icon">
+                            <img src="assests/family_wb.webp" class="benefit-img-icon" width="64" height="64"
+                                alt="Family Well-being">
+                        </div>
+                        <h4 class="unit-title">For Family<br>Well-being</h4>
+                        <p class="unit-desc">Prayers for the health, protection and prosperity of your entire
+                            family.</p>
+                    </div>
+
+                    <div class="unit-divider">
+                        <span class="divider-dot">◆</span>
+                    </div>
+
+                    <!-- Col 5: Milestone Occasions -->
+                    <div class="benefit-col-unit">
+                        <div class="benefit-col-icon">
+                            <img src="assests/monthly.webp" class="benefit-img-icon" width="64" height="64"
+                                alt="Milestone Occasions">
+                        </div>
+                        <h4 class="unit-title">Milestone<br>Occasions</h4>
+                        <p class="unit-desc">Ideal for birthdays, weddings, anniversaries or new beginnings.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Homa Process Section
+       ========================================================================== -->
+    <section class="section-bg-white" id="process" style="padding: 45px 0 10px 0;">
+        <div class="container">
+
+            <div class="section-title-wrapper">
+                <h2 class="section-heading">Homa Process</h2>
+                <div class="section-heading-ornament">
+                    <svg width="260" height="12" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 6H115" stroke="url(#pLineLeft)" stroke-width="1.5" />
+                        <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                        <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                        <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                            stroke="#d96b27" stroke-width="1.2" />
+                        <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                        <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                        <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                        <path d="M145 6H260" stroke="url(#pLineRight)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="pLineLeft" x1="0" y1="6" x2="115" y2="6" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                <stop offset="1" stop-color="#d96b27" />
+                            </linearGradient>
+                            <linearGradient id="pLineRight" x1="145" y1="6" x2="260" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" />
+                                <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Homa Process Image Banner & Mobile Stepper List -->
+            <div class="puja-process-img-container">
+                <img src="assests/puja_process.webp" alt="Homa Process Timeline" class="puja-process-banner-img">
+
+                <!-- Mobile Vertical Stepper List (Shown ONLY on Mobile < 640px) -->
+                <div class="puja-process-mobile-list">
+                    <div class="process-mobile-step">
+                        <div class="step-num-badge">01</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Sankalp (Prayer)</h4>
+                            <p class="step-desc">Erudite priests recite sacred Vedic mantras invoking divine
+                                blessings with your name & Gotra for health & longevity.</p>
+                        </div>
+                    </div>
+                    <div class="process-mobile-step">
+                        <div class="step-num-badge">02</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Special Havan & Vedic Rituals</h4>
+                            <p class="step-desc">Offering sacred oblations into the consecrated fire while
+                                chanting powerful Rigvedic mantras.</p>
+                        </div>
+                    </div>
+                    <div class="process-mobile-step">
+                        <div class="step-num-badge">03</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Homa by Expert Priests</h4>
+                            <p class="step-desc">Traditional fire rituals conducted strictly following authentic
+                                Vedic injunctions by experienced pandits.</p>
+                        </div>
+                    </div>
+                    <div class="process-mobile-step">
+                        <div class="step-num-badge">04</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Blessings & Prayers</h4>
+                            <p class="step-desc">Divine oblations seeking Lord Dhanvantari's grace for physical
+                                vitality, protection, and life longevity.</p>
+                        </div>
+                    </div>
+                    <div class="process-mobile-step">
+                        <div class="step-num-badge">05</div>
+                        <div class="step-content">
+                            <h4 class="step-title">Purnahuti & Updates</h4>
+                            <p class="step-desc">Sacred grand completion of the Homa; real-time video/photo
+                                updates delivered directly to your registered WhatsApp number.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Temple Where Ayush Homa is Performed Section
+       ========================================================================== -->
+    <section class="section-bg-white" id="temple" style="padding: 15px 0 40px 0;">
+        <div class="container">
+
+            <div class="section-title-wrapper">
+                <h2 class="section-heading">Temple Details</h2>
+                <div class="section-heading-ornament">
+                    <svg width="260" height="12" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 6H115" stroke="url(#tLineLeft)" stroke-width="1.5" />
+                        <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                        <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                        <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                            stroke="#d96b27" stroke-width="1.2" />
+                        <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                        <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                        <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                        <path d="M145 6H260" stroke="url(#tLineRight)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="tLineLeft" x1="0" y1="6" x2="115" y2="6" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                <stop offset="1" stop-color="#d96b27" />
+                            </linearGradient>
+                            <linearGradient id="tLineRight" x1="145" y1="6" x2="260" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" />
+                                <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="temple-card-container">
+                <!-- Left Column: Temple Ghat Sunset Image -->
+                <div class="temple-image-wrap">
+                    <img src="assests/temple_ghat.webp" alt="Ancient Sacred Temple Ghat at Sunset">
+                </div>
+
+                <!-- Right Column: Temple Details Info Card -->
+                <div class="temple-info-card">
+                    <div class="temple-card-header">
+                        <h3 class="temple-card-title">Temple Where Ayush Homa is Performed</h3>
+                        <span class="temple-title-accent"></span>
+                    </div>
+                    <p class="temple-card-desc">
+                        Ayush Homa will be performed at a sacred temple with the blessings of deities and the
+                        guidance of experienced priests, following traditional Vedic methods and rituals.
+                    </p>
+
+                    <!-- 4 Feature Pills (2x2 Grid) -->
+                    <div class="temple-features-grid-v2">
+
+                        <div class="temple-feat-pill">
+                            <div class="temple-feat-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15 5H9L12 2Z" fill="#e8631c" />
+                                    <path d="M7 6H17L18.5 11H5.5L7 6Z" fill="#e8631c" fill-opacity="0.85" />
+                                    <path d="M4 12H20V21H4V12Z" fill="#e8631c" fill-opacity="0.15" stroke="#e8631c"
+                                        stroke-width="1.8" />
+                                    <path d="M10 21V15C10 13.9 10.9 13 12 13C13.1 13 14 13.9 14 15V21H10Z"
+                                        fill="#e8631c" />
+                                </svg>
+                            </div>
+                            <span class="temple-feat-title">Ancient & Sacred Temples</span>
+                        </div>
+
+                        <div class="temple-feat-pill">
+                            <div class="temple-feat-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A4 4 0 1012 10 4 4 0 0012 2Z" fill="#e8631c" />
+                                    <path d="M12 4V7" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" />
+                                    <path d="M4 20C4 16 7.5 13 12 13C16.5 13 20 16 20 20" stroke="#e8631c"
+                                        stroke-width="2" stroke-linecap="round" />
+                                    <path d="M12 13L10 17H14L12 13Z" fill="#e8631c" />
+                                </svg>
+                            </div>
+                            <span class="temple-feat-title">Experienced Vedic Priests</span>
+                        </div>
+
+                        <div class="temple-feat-pill">
+                            <div class="temple-feat-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2C12 2 7 7.5 7 12.5C7 15.5 9.2 18 12 18C14.8 18 17 15.5 17 12.5C17 7.5 12 2 12 2Z"
+                                        fill="#e8631c" />
+                                    <path
+                                        d="M12 7C12 7 9.5 10 9.5 12.5C9.5 13.9 10.6 15 12 15C13.4 15 14.5 13.9 14.5 12.5C14.5 10 12 7 12 7Z"
+                                        fill="#ffe2ca" />
+                                    <path d="M3 20H21" stroke="#e8631c" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <span class="temple-feat-title">Traditional Rituals</span>
+                        </div>
+
+                        <div class="temple-feat-pill">
+                            <div class="temple-feat-icon-box">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"
+                                        fill="#e8631c" />
+                                    <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                        fill="#ffffff" fill-opacity="0.7" />
+                                </svg>
+                            </div>
+                            <span class="temple-feat-title">Divine Blessings</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Select Your Homa Package Section
+       ========================================================================== -->
+    <section class="section-padding section-bg-warm" id="packages">
+        <div class="container">
+
+            <div class="section-title-wrapper">
+                <h2 class="section-heading">Select Your Homa Package</h2>
+                <div class="section-heading-ornament">
+                    <svg width="260" height="12" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 6H115" stroke="url(#pkgLineLeft)" stroke-width="1.5" />
+                        <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                        <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                        <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                            stroke="#d96b27" stroke-width="1.2" />
+                        <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                        <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                        <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                        <path d="M145 6H260" stroke="url(#pkgLineRight)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="pkgLineLeft" x1="0" y1="6" x2="115" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                <stop offset="1" stop-color="#d96b27" />
+                            </linearGradient>
+                            <linearGradient id="pkgLineRight" x1="145" y1="6" x2="260" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" />
+                                <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Option 1: Top Full-Width Cover Image Cards (Sleek Floating Pill Badges) -->
+            <div class="packages-grid-opt1">
+
+                <!-- Card 1: Individual Homa + Astro Consultation -->
+                <div class="opt1-pkg-card" onclick="openBookingModal('Individual Homa + Astro Consultation (₹999)')">
+                    <span class="opt1-floating-badge badge-orange">⭐ RECOMMENDED</span>
+                    <div class="opt1-image-box">
+                        <img src="assests/individual_consultation.webp" alt="Individual Homa + Astro Consultation">
+                    </div>
+                    <div class="opt1-body">
+                        <div class="opt1-title-header-row">
+                            <h3 class="opt1-title">Individual Homa + Astro Consultation</h3>
+                            <span class="opt1-member-tag">👤 1 Person</span>
+                        </div>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Ayush Homa + 1-on-1
+                            Horoscope Guidance</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Personalized Sankalpa with
+                            Name &amp; Nakshatra</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Energized Prasad &amp;
+                            Sacred Ash Shipped to Doorstep</p>
+                        <div class="opt1-price-wrap">
+                            <div class="opt1-price">₹999</div>
+                            <div class="opt1-old-price">₹1,499</div>
+                        </div>
+                        <button class="opt1-btn">
+                            <span>Select Package</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Individual Homa -->
+                <div class="opt1-pkg-card" onclick="openBookingModal('Individual Homa (₹851)')">
+                    <div class="opt1-image-box">
+                        <img src="assests/individual.webp" class="img-scale-individual" alt="Individual Homa">
+                    </div>
+                    <div class="opt1-body">
+                        <div class="opt1-title-header-row">
+                            <h3 class="opt1-title">Individual Homa</h3>
+                            <span class="opt1-member-tag">👤 1 Person</span>
+                        </div>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Personalized Homa Ritual
+                            for 1 Devotee</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Personalized Sankalpa with
+                            Name &amp; Nakshatra</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Energized Prasad &amp;
+                            Sacred Ash Shipped to Doorstep</p>
+                        <div class="opt1-price-wrap">
+                            <div class="opt1-price">₹851</div>
+                            <div class="opt1-old-price">₹1,200</div>
+                        </div>
+                        <button class="opt1-btn">
+                            <span>Select Package</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Partner Homa -->
+                <div class="opt1-pkg-card" onclick="openBookingModal('Partner Homa (₹1,251)')">
+                    <div class="opt1-image-box">
+                        <img src="assests/partner.webp" class="img-scale-partner" alt="Partner Homa">
+                    </div>
+                    <div class="opt1-body">
+                        <div class="opt1-title-header-row">
+                            <h3 class="opt1-title">Partner Homa</h3>
+                            <span class="opt1-member-tag badge-pink">👥 Couple (2)</span>
+                        </div>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Health &amp; Harmony
+                            Ritual for Married Couple</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Personalized Sankalpa for
+                            Both Partners</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Energized Prasad &amp;
+                            Sacred Ash Shipped to Doorstep</p>
+                        <div class="opt1-price-wrap">
+                            <div class="opt1-price">₹1,251</div>
+                            <div class="opt1-old-price">₹1,800</div>
+                        </div>
+                        <button class="opt1-btn">
+                            <span>Select Package</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Joint Family Homa (Featured) -->
+                <div class="opt1-pkg-card opt1-featured" onclick="openBookingModal('Joint Family Homa (₹3,001)')">
+                    <span class="opt1-floating-badge badge-gold">👑 MOST POPULAR</span>
+                    <div class="opt1-image-box">
+                        <img src="assests/joint.webp" alt="Joint Family Homa">
+                    </div>
+                    <div class="opt1-body">
+                        <div class="opt1-title-header-row">
+                            <h3 class="opt1-title">Joint Family Homa</h3>
+                            <span class="opt1-member-tag badge-gold-tag">👨‍👩‍👧‍👦 6 Members</span>
+                        </div>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Grand Ritual for Extended
+                            Family Lineage</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Personalized Sankalpa for
+                            Up to 6 Members</p>
+                        <p class="opt1-desc"><i class="fa-solid fa-circle-check"></i> Energized Prasad &amp;
+                            Sacred Ash Shipped to Doorstep</p>
+                        <div class="opt1-price-wrap">
+                            <div class="opt1-price gold-price">₹3,001</div>
+                            <div class="opt1-old-price">₹4,500</div>
+                        </div>
+                        <button class="opt1-btn opt1-btn-gold">
+                            <span>Select Package</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Why AstroVed Section
+       ========================================================================== -->
+    <section class="why-astroved-section" id="why-astroved">
+        <div class="container">
+
+            <div class="why-astroved-header">
+                <h2 class="why-astroved-main-title">Why <span class="highlight-orange">AstroVed</span></h2>
+
+                <div class="section-heading-ornament">
+                    <svg width="260" height="12" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 6H115" stroke="url(#pkgLineLeft)" stroke-width="1.5" />
+                        <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                        <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                        <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                            stroke="#d96b27" stroke-width="1.2" />
+                        <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                        <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                        <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                        <path d="M145 6H260" stroke="url(#pkgLineRight)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="pkgLineLeft" x1="0" y1="6" x2="115" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                <stop offset="1" stop-color="#d96b27" />
+                            </linearGradient>
+                            <linearGradient id="pkgLineRight" x1="145" y1="6" x2="260" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" />
+                                <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <p class="why-astroved-subtitle">Authentic Vedic rituals for a happier, healthier and more fulfilling
+                    life</p>
+            </div>
+
+            <div class="why-astroved-matrix">
+
+                <!-- Row 1, Col 1 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/25_years.png" alt="25+ Years of Trust">
+                    </div>
+                    <h3 class="why-unit-title">25+ Years of Trust</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Serving millions of devotees worldwide since 1999.</p>
+                </div>
+
+                <!-- Row 1, Col 2 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/vedic_priest.png" alt="Erudite Vedic Priests">
+                    </div>
+                    <h3 class="why-unit-title">Erudite Vedic Priests</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Conducted by experienced Agama-trained priests.</p>
+                </div>
+
+                <!-- Row 1, Col 3 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/sankalpa.png" alt="Personalized Sankalpa">
+                    </div>
+                    <h3 class="why-unit-title">Personalized Sankalpa</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Your Name, Nakshatra (Star), and Gotra recited individually.</p>
+                </div>
+
+                <!-- Row 2, Col 1 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/live.png" alt="Live Updates &amp; Video">
+                    </div>
+                    <h3 class="why-unit-title">Live Updates &amp; Video</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Receive real-time WhatsApp photo/video proofs and webcast links.</p>
+                </div>
+
+                <!-- Row 2, Col 2 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/temple.png" alt="Sacred Powerspots">
+                    </div>
+                    <h3 class="why-unit-title">Sacred Powerspots</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Rituals performed at consecrated ancient temples.</p>
+                </div>
+
+                <!-- Row 2, Col 3 -->
+                <div class="why-matrix-unit">
+                    <div class="why-circle-badge">
+                        <img src="assests/prasad.png" alt="Doorstep Prasad Delivery">
+                    </div>
+                    <h3 class="why-unit-title">Doorstep Prasad Delivery</h3>
+                    <div class="why-unit-accent-line"></div>
+                    <p class="why-unit-desc">Energized Homa Bhasma, Raksha thread, and divine Prasad shipped to your
+                        home.</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       Reviews & Ratings Section (Matching Reference Image Design)
+       ========================================================================== -->
+    <section class="section-padding section-bg-warm-testimonial" id="reviews">
+        <div class="container">
+
+            <div class="testimonial-ref-wrapper">
+
+                <!-- Left Column: Hero Text, Impact Rating Stats & Controls -->
+                <div class="testimonial-left-hero">
+
+                    <h2 class="testimonial-main-heading">
+                        Devotee Trust &amp;<br>
+                        <span class="highlight-gold">Experiences</span>
+                    </h2>
+
+                    <!-- 3 Key Impact Stats Badges Grid -->
+                    <div class="review-stats-grid">
+                        <div class="stat-badge-unit">
+                            <div class="stat-num-val">4.9<i class="fa-solid fa-star stat-star-icon"></i></div>
+                            <span class="stat-lbl-text">Devotee Rating</span>
+                        </div>
+                        <div class="stat-badge-divider"></div>
+                        <div class="stat-badge-unit">
+                            <div class="stat-num-val">10,000+</div>
+                            <span class="stat-lbl-text">Homas Done</span>
+                        </div>
+                        <div class="stat-badge-divider"></div>
+                        <div class="stat-badge-unit">
+                            <div class="stat-num-val">45+</div>
+                            <span class="stat-lbl-text">Countries</span>
+                        </div>
+                    </div>
+
+                    <p class="testimonial-body-desc">
+                        Every Ayush Homa is conducted with authentic Vedic chanting, personalized Sankalpa, and
+                        live photo/video updates to bring health, peace &amp; divine longevity to your family.
+                    </p>
+
+                    <!-- Carousel Controls -->
+                    <div class="testimonial-controls">
+                        <button class="btn-carousel-circle" id="prevRevBtn" onclick="navigateReview(-1)">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <span class="carousel-counter-text" id="revCounter">1 / 4</span>
+                        <button class="btn-carousel-circle active" id="nextRevBtn" onclick="navigateReview(1)">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Floating Testimonial Card -->
+                <div class="testimonial-right-card-wrap">
+                    <div class="testimonial-floating-card" id="testimonialCard">
+                        <div class="card-stars-top">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="quote-watermark-mark">“</div>
+
+                        <p class="card-quote-body" id="cardQuoteText">
+                            "The Ayush Homa conducted by the Vedic priests brought immense peace and positive
+                            energy into our home. The Sankalpa was performed with precise name and Nakshatra
+                            chanting. Highly recommend AstroVed for authentic rituals!"
+                        </p>
+
+                        <div class="card-author-divider"></div>
+
+                        <div class="card-author-footer">
+                            <div class="author-avatar-box">
+                                <img src="assests/rev_ramesh.webp" alt="Ramesh Bhat" id="cardAuthorImg">
+                            </div>
+                            <div class="author-details-col">
+                                <h5 class="author-fullname" id="cardAuthorName">Ramesh Bhat</h5>
+                                <span class="author-city-country" id="cardAuthorLoc">Bangalore · India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Devotee Video Testimonials Gallery -->
+            <div class="devotee-video-gallery-wrap">
+                <div class="video-gallery-header">
+                    <span class="video-gallery-badge"><i class="fa-solid fa-circle-play"></i> VIDEO
+                        TESTIMONIALS</span>
+                    <h3 class="video-gallery-title">Watch Devotee Video Testimonials</h3>
+                    <p class="video-gallery-subtitle">Click on any video below to watch authentic devotee
+                        experiences</p>
+                </div>
+
+                <div class="video-gallery-grid">
+
+                    <!-- Video Reel 1 -->
+                    <div class="video-reel-card" onclick="openVideoModal()">
+                        <div class="video-reel-thumb">
+                            <img src="assests/rev_ramesh.webp" alt="Ramesh Bhat Video">
+                            <div class="video-reel-gradient"></div>
+                            <div class="video-reel-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-reel-time"><i class="fa-solid fa-clock"></i> 0:45</span>
+                            <div class="video-reel-caption">
+                                <span class="video-reel-name">Ramesh Bhat</span>
+                                <span class="video-reel-city"><i class="fa-solid fa-location-dot"></i>
+                                    Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Reel 2 -->
+                    <div class="video-reel-card" onclick="openVideoModal()">
+                        <div class="video-reel-thumb">
+                            <img src="assests/rev_lakshmi.webp" alt="Lakshmi S. Video">
+                            <div class="video-reel-gradient"></div>
+                            <div class="video-reel-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-reel-time"><i class="fa-solid fa-clock"></i> 1:10</span>
+                            <div class="video-reel-caption">
+                                <span class="video-reel-name">Lakshmi S.</span>
+                                <span class="video-reel-city"><i class="fa-solid fa-location-dot"></i>
+                                    Chennai</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Reel 3 -->
+                    <div class="video-reel-card" onclick="openVideoModal()">
+                        <div class="video-reel-thumb">
+                            <img src="assests/rev_vijay.webp" alt="Vijay K. Video">
+                            <div class="video-reel-gradient"></div>
+                            <div class="video-reel-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-reel-time"><i class="fa-solid fa-clock"></i> 0:52</span>
+                            <div class="video-reel-caption">
+                                <span class="video-reel-name">Vijay K.</span>
+                                <span class="video-reel-city"><i class="fa-solid fa-location-dot"></i>
+                                    USA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Reel 4 -->
+                    <div class="video-reel-card" onclick="openVideoModal()">
+                        <div class="video-reel-thumb">
+                            <img src="assests/rev_anita.webp" alt="Anita P. Video">
+                            <div class="video-reel-gradient"></div>
+                            <div class="video-reel-play">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span class="video-reel-time"><i class="fa-solid fa-clock"></i> 1:25</span>
+                            <div class="video-reel-caption">
+                                <span class="video-reel-name">Anita P.</span>
+                                <span class="video-reel-city"><i class="fa-solid fa-location-dot"></i>
+                                    Singapore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+       Frequently Asked Questions Section with Flame Wings
+       ========================================================================== -->
+    <section class="section-padding section-bg-warm-tint faqs-section-wrap" id="faqs">
+
+
+
+        <div class="container">
+
+            <div class="section-title-wrapper" style="text-align: center; margin-bottom: 32px;">
+
+                <h2 class="section-heading" style="font-size: 2.2rem; margin-top: 6px;">Frequently Asked
+                    Questions</h2>
+                <div class="section-heading-ornament" style="justify-content: center; margin-top: 10px;">
+                    <svg width="260" height="12" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 6H115" stroke="url(#faqLineLeft)" stroke-width="1.5" />
+                        <circle cx="121" cy="6" r="1.5" fill="#d96b27" />
+                        <circle cx="125" cy="6" r="1" fill="#d96b27" />
+                        <rect x="128" y="4" width="4" height="4" rx="0.5" transform="rotate(45 130 6)" fill="none"
+                            stroke="#d96b27" stroke-width="1.2" />
+                        <circle cx="130" cy="6" r="1" fill="#c43c14" />
+                        <circle cx="135" cy="6" r="1" fill="#d96b27" />
+                        <circle cx="139" cy="6" r="1.5" fill="#d96b27" />
+                        <path d="M145 6H260" stroke="url(#faqLineRight)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="faqLineLeft" x1="0" y1="6" x2="115" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" stop-opacity="0.05" />
+                                <stop offset="1" stop-color="#d96b27" />
+                            </linearGradient>
+                            <linearGradient id="faqLineRight" x1="145" y1="6" x2="260" y2="6"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d96b27" />
+                                <stop offset="1" stop-color="#d96b27" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 2-Column FAQs Grid (4 per column) -->
+            <div class="faqs-two-columns-grid">
+
+                <!-- Column 1 -->
+                <div class="faq-col">
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">Why should I choose AstroVed for performing a
+                                Homa?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>AstroVed connects you directly with authentic ancient temples and
+                                    learned Vedic scholars who perform your personalized Sankalpa according to
+                                    strict scriptural traditions.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">I don't know my Gotra, what should I do?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>If you do not know your Gotra, the priests will perform the Sankalpa under
+                                    the universal "Kashyapa Gotra" as per ancient Vedic scriptures.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">Who will perform the Homa?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>Experienced, erudite Vedic priests who have undergone years of Agama and
+                                    Veda Pathashala training at consecrated temple centers.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">What will be done in this Homa?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>The ritual includes Ganapathi Pooja, personalized Sankalpa with your name
+                                    & star, Ayush Suktam chanting, and sacred Homa fire offerings.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Column 2 -->
+                <div class="faq-col">
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">How will I know the Homa has been done in my
+                                name?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>You will receive video/photo updates of your Sankalpa chanting, live
+                                    webcast link, and high-definition video recordings.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">What will I get after the Homa is done?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>Energized Homa Bhasma (sacred ash), Raksha thread, and Prasad dispatched
+                                    directly to your doorstep via courier.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">What are the other services offered by
+                                AstroVed?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>We offer special Archana, Nakshatra Shanti, Maha Mrityunjaya Homa,
+                                    Dhanvantari Homa, and daily temple offerings.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <div class="faq-card-accent"></div>
+                        <button class="faq-accordion-btn" onclick="toggleFaqAccordion(this)">
+                            <span class="faq-question-text">Where can I contact for more information?</span>
+                            <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-content">
+                                <i class="fa-solid fa-circle-check faq-check-icon"></i>
+                                <span>Our 24/7 dedicated Vedic support team is available via chat, email, and
+                                    phone to assist you with any questions.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Flame Wings -->
+        <div class="faq-flame-wing right-faq-flame">
+            <img src="assests/fire2.webp" alt="Sacred Fire Flame" class="faq-flame-img right-flame">
+        </div>
+
+    </section>
+
+    <!-- Video Modal Lightbox -->
+    <div class="modal-backdrop" id="videoModal">
+        <div class="modal-card video-modal-card">
+            <button class="modal-close-btn" onclick="closeVideoModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="video-responsive-wrap">
+                <iframe id="videoIframe" src="" title="Ayush Homa Sacred Fire Ritual"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Controls -->
+    <script>
+        function openBookingModal(packageName) {
+            // Dummy CTA button action
+            return false;
+        }
+
+        function switchPackageTab(event, panelId) {
+            document.querySelectorAll('.opt3-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.opt3-panel').forEach(panel => panel.classList.remove('active'));
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+            const targetPanel = document.getElementById(panelId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        }
+
+        function selectPackageCard(cardElement, packageName) {
+            document.querySelectorAll('.puja-pkg-card-v2').forEach(c => {
+                c.classList.remove('active-selected');
+                const radio = c.querySelector('.pkg-radio-circle');
+                if (radio) {
+                    radio.classList.remove('checked-gold');
+                    radio.innerHTML = '';
+                }
+            });
+
+            cardElement.classList.add('active-selected');
+            const radio = cardElement.querySelector('.pkg-radio-circle');
+            if (radio) {
+                radio.classList.add('checked-gold');
+                radio.innerHTML = '<i class="fa-solid fa-check"></i>';
+            }
+
+            openBookingModal(packageName);
+        }
+
+        let isClickScrolling = false;
+        let clickScrollTimer = null;
+
+        function scrollActiveTabIntoView(btn) {
+            const track = document.getElementById('subnavTabsTrack');
+            if (!track || !btn) return;
+
+            const trackRect = track.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+
+            if (btnRect.left < trackRect.left + 20 || btnRect.right > trackRect.right - 20) {
+                const scrollLeftTarget = btn.offsetLeft - (track.clientWidth / 2) + (btn.clientWidth / 2);
+                track.scrollTo({
+                    left: Math.max(0, scrollLeftTarget),
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function setActiveTab(sectionId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.getAttribute('data-section') === sectionId) {
+                    btn.classList.add('active');
+                    scrollActiveTabIntoView(btn);
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function scrollToSection(id, btn) {
+            const el = document.getElementById(id);
+
+            isClickScrolling = true;
+            clearTimeout(clickScrollTimer);
+
+            setActiveTab(id);
+
+            if (el) {
+                const offset = 70;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = el.getBoundingClientRect().top;
+                const offsetPosition = elementRect - bodyRect - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            clickScrollTimer = setTimeout(() => {
+                isClickScrolling = false;
+            }, 1000);
+        }
+
+        function scrollSubnavTab(direction) {
+            const track = document.getElementById('subnavTabsTrack');
+            if (track) {
+                track.scrollBy({
+                    left: direction * 220,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function checkSubnavArrows() {
+            const track = document.getElementById('subnavTabsTrack');
+            const prevBtn = document.getElementById('subnavPrevBtn');
+            const nextBtn = document.getElementById('subnavNextBtn');
+            if (track && prevBtn && nextBtn) {
+                const isOverflowing = track.scrollWidth > (track.clientWidth + 5);
+                if (isOverflowing) {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                } else {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                }
+            }
+        }
+
+        window.addEventListener('resize', checkSubnavArrows);
+        window.addEventListener('load', checkSubnavArrows);
+        document.addEventListener('DOMContentLoaded', () => {
+            checkSubnavArrows();
+            const track = document.getElementById('subnavTabsTrack');
+            if (track) track.addEventListener('scroll', checkSubnavArrows);
+        });
+
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+            modal.classList.add('active');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = "";
+            modal.classList.remove('active');
+        }
+
+        function toggleFaqAccordion(btn) {
+            const card = btn.parentElement;
+            const isActive = card.classList.contains('active');
+
+            document.querySelectorAll('.faq-item-card').forEach(c => c.classList.remove('active'));
+
+            if (!isActive) {
+                card.classList.add('active');
+            }
+        }
+
+        function slideCarousel(dir) {
+            const track = document.querySelector('.video-reviews-track');
+            if (track) {
+                track.scrollBy({
+                    left: dir * 300,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        window.onclick = function (event) {
+            const videoModal = document.getElementById('videoModal');
+            if (event.target === videoModal) {
+                closeVideoModal();
+            }
+        }
+
+        // Interactive Testimonial Carousel matching reference design
+        let currentReviewIndex = 0;
+        const reviewsData = [
+            {
+                quote: `"The Ayush Homa conducted by the Vedic priests brought immense peace and positive energy into our home. The Sankalpa was performed with precise name and Nakshatra chanting. Highly recommend AstroVed for authentic rituals!"`,
+                avatar: `assests/rev_ramesh.webp`,
+                name: `Ramesh Bhat`,
+                location: `Bangalore · India`
+            },
+            {
+                quote: `"Booked the Partner Homa for my parents' 50th anniversary. The WhatsApp video updates were seamless, and the energized Prasad arrived safely at our doorstep. Truly a divine experience!"`,
+                avatar: `assests/rev_lakshmi.webp`,
+                name: `Lakshmi S.`,
+                location: `Chennai · India`
+            },
+            {
+                quote: `"Living abroad, it's often hard to arrange genuine Vedic rituals back home. AstroVed made performing the Homa in India completely effortless. We felt deeply blessed!"`,
+                avatar: `assests/rev_vijay.webp`,
+                name: `Vijay K.`,
+                location: `California · USA`
+            },
+            {
+                quote: `"The horoscope consultation combined with the Ayush Homa gave me complete clarity and peace of mind for my family's well-being. Deeply grateful to the erudite Vedic priests!"`,
+                avatar: `assests/rev_anita.webp`,
+                name: `Anita P.`,
+                location: `Singapore`
+            }
+        ];
+
+        function navigateReview(direction) {
+            currentReviewIndex += direction;
+            if (currentReviewIndex < 0) {
+                currentReviewIndex = reviewsData.length - 1;
+            } else if (currentReviewIndex >= reviewsData.length) {
+                currentReviewIndex = 0;
+            }
+            updateReviewCard();
+        }
+
+        function updateReviewCard() {
+            const card = document.getElementById('testimonialCard');
+            if (!card) return;
+
+            card.classList.add('fade-out');
+
+            setTimeout(function () {
+                const data = reviewsData[currentReviewIndex];
+                document.getElementById('cardQuoteText').textContent = data.quote;
+                document.getElementById('cardAuthorImg').src = data.avatar;
+                document.getElementById('cardAuthorName').textContent = data.name;
+                document.getElementById('cardAuthorLoc').textContent = data.location;
+                document.getElementById('revCounter').textContent = (currentReviewIndex + 1) + ' / ' + reviewsData.length;
+
+                card.classList.remove('fade-out');
+            }, 200);
+        }
+
+        // ScrollSpy: Automatically transfer active class & fire icon as user scrolls
+        window.addEventListener('scroll', function () {
+            if (isClickScrolling) return;
+
+            const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
+            if (isAtBottom) {
+                setActiveTab('faqs');
+                return;
+            }
+
+            const sections = ['about', 'benefits', 'process', 'temple', 'packages', 'why-astroved', 'reviews', 'faqs'];
+            const scrollPos = window.scrollY + 140;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const id = sections[i];
+                const el = document.getElementById(id);
+                if (el && scrollPos >= el.offsetTop) {
+                    setActiveTab(id);
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

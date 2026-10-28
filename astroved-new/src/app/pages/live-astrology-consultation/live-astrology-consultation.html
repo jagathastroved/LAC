@@ -1,0 +1,30 @@
+<div class="page-wrapper">
+  <app-navbar></app-navbar>
+  <main>
+    <app-banner></app-banner>
+    <app-trust-banner></app-trust-banner>
+    <app-questions></app-questions>
+
+    <app-booking-info></app-booking-info>
+    <app-astrologers></app-astrologers>
+    <app-testimonials></app-testimonials>
+
+    <app-faq></app-faq>
+  </main>
+  <app-footer></app-footer>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta-bar" [class.visible]="isStickyVisible">
+    <div class="sticky-cta-content">
+      <div class="sticky-cta-text">
+        <span class="sticky-title">Get Answers Now</span>
+        <span class="sticky-urgency">🔥 Limited slots available!</span>
+      </div>
+      <button class="btn-primary sticky-btn" (click)="scrollToAstrologers()">
+        BOOK CONSULTATION
+      </button>
+    </div>
+  </div>
+
+
+</div>

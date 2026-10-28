@@ -1,0 +1,126 @@
+/* ============================================================
+   9. FREQUENTLY ASKED QUESTIONS SECTION
+   ============================================================ */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0,0,0,0.03);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details[open].faq-item {
+    border-left: 5px solid #6868f9;
+    box-shadow: 0 10px 30px rgba(104, 104, 249, 0.08);
+}
+
+.faq-question {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question:hover {
+    background: rgba(104, 104, 249, 0.02);
+}
+
+.faq-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.faq-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.inactive-icon {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+.active-icon {
+    background: #f4eefe;
+    color: #6868f9;
+}
+
+/* Make inactive icon turn active when details is open */
+details[open] .inactive-icon {
+    background: #f4eefe;
+    color: #6868f9;
+}
+
+.faq-chevron {
+    color: #8b5cf6;
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+}
+
+details[open] .faq-chevron {
+    transform: rotate(180deg);
+    background: #f4eefe;
+}
+
+.faq-answer-wrapper {
+    padding: 0 2rem 1rem 5rem; /* Indent to match text, not icon */
+}
+
+.faq-answer {
+    padding: 1rem 1.5rem;
+    background: #f8f8fc;
+    border-radius: 8px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .faq-question {
+        padding: 1rem 1.2rem;
+    }
+    
+    .faq-left {
+        gap: 1rem;
+    }
+    
+    .faq-answer-wrapper {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+    }
+}

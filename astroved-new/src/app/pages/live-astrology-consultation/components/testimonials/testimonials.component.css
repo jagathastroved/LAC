@@ -1,0 +1,153 @@
+/* ============================================================
+   8. CLIENT TESTIMONIAL VIDEOS SECTION
+   ============================================================ */
+.video-testimonials-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    flex: 1 1 300px;
+    max-width: 450px;
+    background: #ffffff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" opacity="0.05"><path fill="%236868f9" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom left;
+    background-size: 200%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    z-index: 1;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(104, 104, 249, 0.1);
+    border-color: rgba(104, 104, 249, 0.2);
+}
+
+.lotus-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 1rem auto;
+    width: 100%;
+}
+
+.lotus-divider .lotus-line {
+    height: 1px;
+    width: 40px;
+    background: #6868f9;
+    opacity: 0.4;
+}
+
+/* Quote Ribbon */
+.quote-ribbon {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 45px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8px;
+    color: white;
+    font-size: 2rem;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+}
+
+.purple-ribbon {
+    background: #47178f;
+}
+
+.orange-ribbon {
+    background: #FF7B00;
+}
+
+.test-content {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.test-rating {
+    margin-bottom: 1rem;
+    margin-top: -1.2rem;
+    margin-left: 55px;
+    display: flex;
+    gap: 4px;
+}
+
+.test-rating svg {
+    filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+}
+
+.test-quote {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c2c3e;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.test-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.author-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.purple-bg {
+    background: rgba(104, 104, 249, 0.1);
+    color: #47178f;
+}
+
+.orange-bg {
+    background: rgba(255, 123, 0, 0.1);
+    color: #FF7B00;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 800;
+    color: #1a1a2e;
+    font-size: 1.05rem;
+    margin-bottom: 0.1rem;
+}
+
+.author-type {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+}

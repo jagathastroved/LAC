@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naga Dosha Calculator | AstroVed</title>
+    <!-- Custom CSS (Split into components) -->
+    <link rel="stylesheet" href="css/variables.css?v=3">
+    <link rel="stylesheet" href="css/base.css?v=3">
+    <link rel="stylesheet" href="css/navbar.css?v=3">
+    <link rel="stylesheet" href="css/hero.css?v=3">
+    <link rel="stylesheet" href="css/info-cards.css?v=3">
+    <link rel="stylesheet" href="css/landing-sections.css?v=4">
+    <link rel="stylesheet" href="css/footer.css?v=3">
+    <!-- <link rel="stylesheet" href="css/main.css?v=3"> Commented out for now -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/fav_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MOBILE FORM FIX - inline styles to guarantee single-column on mobile -->
+    <style>
+        /* Prevent horizontal scroll on body level */
+        html,
+        body {
+            overflow-x: hidden !important;
+        }
+
+        /* Calculator section: no overflow clipping (so form card shows above hero) */
+        #calculator-section {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            overflow: visible !important;
+            position: relative !important;
+            z-index: 25 !important;
+        }
+
+        /* Inner container: clip only horizontally */
+        #calculator-section .container,
+        #calculator-section .calculator-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Form card: ensure it fits within viewport */
+        .premium-naga-form-container {
+            overflow: visible !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* On mobile: force single column, reduce side padding */
+        @media (max-width: 900px) {
+            .modern-form-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                width: 100% !important;
+            }
+
+            .modern-fg {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
+            }
+
+            .btn-submit-modern {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .premium-naga-form-container {
+                padding: 20px 16px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://www.astroved.com/astropedia/assets/images/astropedia-logo.svg"
+                    alt="Naga Dosha Calculator Logo">
+
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home <i class="fas fa-caret-down"></i></a>
+                <a href="#">108 Divya Desam <span class="badge-new">New</span></a>
+                <div class="dropdown">
+                    <a href="#" class="nav-item-new">Festivals <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Moon Phases(Thithi)</a>
+                        <a href="#">Yearly Calendar</a>
+                        <a href="#">Hindu Calendar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Fasting <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Weekly</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Deities <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Gods</a>
+                        <a href="#">Goddess</a>
+                        <a href="#">Mantras</a>
+                        <a href="#">Virtual Pooja</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Temples <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">North India</a>
+                        <a href="#">South India</a>
+                        <a href="#">West India</a>
+                        <a href="#">East India</a>
+                        <a href="#">108 Divya Desam</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Astrology <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Hora</a>
+                        <a href="#">Planets</a>
+                        <a href="#">Vastu</a>
+                        <a href="#">Numerology</a>
+                        <a href="#">Nakshatras (Stars)</a>
+                        <a href="#">Panchangam</a>
+                        <a href="#">Today Tithi [Moon Phase]</a>
+                        <a href="#">Rahukalam <i class="fas fa-caret-right"
+                                style="float: right; margin-top: 4px; color: var(--border-color);"></i></a>
+                        <a href="#">Birth Date Astrology</a>
+                        <a href="#">Marriage Prediction</a>
+                        <a href="#">Ask Saibaba</a>
+                        <a href="#">Moon Signs</a>
+                        <a href="#">Choghadiya</a>
+                        <a href="#">Jupiter Retrograde</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Free Tools <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Love Calculator</a>
+                        <a href="#">Dasa Bhukti</a>
+                        <a href="#">Horoscope Matching</a>
+                        <a href="#">Nalla Neram</a>
+                        <a href="#">Chandrashtama</a>
+                        <a href="#">Birth Chart</a>
+                        <a href="#">Hora Watch</a>
+                        <a href="#">More Free Tools</a>
+                    </div>
+                </div>
+                <a href="#">Astrology Services</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <a href="#" class="icon-link" id="search-toggle" aria-label="Search"><i
+                            class="fas fa-search"></i></a>
+                </div>
+                <a href="#" class="icon-link" aria-label="Location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="action-text">Chennai</span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="action-text">04 Aug</span>
+                </a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+    <!-- Mobile Search Bar (shows below navbar on mobile when search is clicked) -->
+    <div class="mobile-search-bar" id="mobileSearchBar">
+        <div class="mobile-search-bar-inner">
+            <i class="fas fa-search"></i>
+            <input type="text" id="mobileSearchInput" placeholder="Search astrology topics..." autocomplete="off">
+        </div>
+    </div>
+
+    <main>
+        <!-- Cinematic Hero Section -->
+        <section class="hero-section">
+            <div class="breadcrumbs">
+                <a href="#">Home</a> &gt; <a href="#">Free Tools</a> &gt; <span>Naga Dosha Calculator</span>
+            </div>
+
+            <!-- Mobile Top Banner Image -->
+            <div class="mobile-top-banner">
+                <img src="images/image_copy_8.png" alt="Naga Dosha Calculator" class="mobile-banner-img">
+            </div>
+
+            <div class="container hero-container-cinematic">
+                <div class="golden-particles"></div>
+                <!-- Left side empty to show background image -->
+                <div class="hero-left-empty"></div>
+
+                <!-- Right side form panel -->
+                <div class="hero-content-right">
+                    <!-- Main Title -->
+                    <h1 class="hero-title-premium">
+                        Naga Dosha <span class="gold-gradient">Calculator</span>
+                    </h1>
+
+                    <!-- Decorative Line with Om -->
+                    <div class="hero-divider-premium">
+                        <span class="d-line-l"></span>
+                        <span class="om-symbol">ॐ</span>
+                        <span class="d-line-r"></span>
+                    </div>
+
+                    <!-- Subtitle Text -->
+                    <p class="hero-subtitle-premium">
+                        Facing unexplained delays in marriage, career obstacles, or relationship struggles? These could
+                        be silent symptoms of a hidden planetary affliction.
+                    </p>
+
+                    <!-- Main CTA Button -->
+                    <a href="#calculator-section" id="btn-show-calculator" class="btn-cta-premium">
+                        <span>Check Your Dosha Free</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Dedicated Calculator Section -->
+        <section id="calculator-section" class="calculator-section"
+            style="padding: 0; min-height: auto; margin: 0; background: transparent; display: none; position: relative; z-index: 25;">
+            <div class="container calculator-container form-animated-container"
+                style="max-width: 1350px; margin: -15px auto 10px auto; padding: 0 16px 0 16px;">
+
+                <div class="premium-naga-form-container" id="nagaFormCard">
+                    <button class="btn-dismiss" id="btnDismissForm"><i class="fa-solid fa-xmark"></i></button>
+                    <h3 class="premium-naga-title" id="formMainTitle">Enter Your Details</h3>
+                    <div class="om-divider" id="formMainDivider">
+                        <span class="om-line"></span>
+                        <span class="om-symbol">ॐ</span>
+                        <span class="om-line"></span>
+                    </div>
+
+                    <form id="nagaCalculatorForm" class="dosha-form-new">
+                        <div class="modern-form-grid">
+
+                            <!-- Row 1 -->
+                            <div class="modern-fg">
+                                <label>Full Name</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" placeholder="Enter name">
+                                </div>
+                            </div>
+
+                            <div class="modern-fg">
+                                <label>Gender</label>
+                                <div class="modern-input-wrapper custom-select-wrapper" id="genderSelectWrapper"
+                                    style="padding: 0;">
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                    <div class="custom-select-trigger"
+                                        style="padding: 14px 15px 14px 45px; width: 100%;">
+                                        <span class="custom-select-value"
+                                            style="font-weight: 500; color: #1e293b;">Select</span>
+                                        <i class="fa-solid fa-chevron-down drop-icon"
+                                            style="position: static; margin-left: auto;"></i>
+                                    </div>
+                                    <div class="custom-select-options">
+                                        <div class="custom-option" data-value="Male">Male</div>
+                                        <div class="custom-option" data-value="Female">Female</div>
+                                    </div>
+                                    <input type="hidden" name="gender" id="genderInput">
+                                </div>
+                            </div>
+
+                            <div class="modern-fg">
+                                <label>Date of Birth</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <div class="multi-input-modern">
+                                        <input type="text" placeholder="DD" maxlength="2">
+                                        <span class="sep">/</span>
+                                        <input type="text" placeholder="MM" maxlength="2">
+                                        <span class="sep">/</span>
+                                        <input type="text" placeholder="YYYY" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modern-fg">
+                                <label>Time of Birth</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class="multi-input-modern">
+                                        <input type="text" placeholder="HH" maxlength="2">
+                                        <span class="sep">:</span>
+                                        <input type="text" placeholder="MM" maxlength="2">
+                                        <span class="sep">:</span>
+                                        <input type="text" placeholder="SS" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modern-fg">
+                                <label>Country</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <input type="text" placeholder="Country">
+                                </div>
+                            </div>
+
+                            <div class="modern-fg">
+                                <label>City</label>
+                                <div class="modern-input-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" placeholder="City">
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-submit-modern">
+                                <span>Calculate My Dosha</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Form Result Container (Standalone Card, NO form background frame!) -->
+                <div id="formResultContainer" style="display: none; padding: 0; position: relative;">
+                    <button class="btn-dismiss" id="btnDismissResult"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="premium-result-card" id="premiumResultCard">
+
+                        <!-- Result Header -->
+                        <div class="result-header">
+                            <div class="result-icon-ring" id="resultIconRing">
+                                <i id="nagaResultIcon" class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h2 id="nagaResultTitle" class="result-title">
+                                <span id="nagaResultText">You are under the influence of Naga Dosha</span>
+                            </h2>
+                            <p class="result-subtitle" id="nagaResultSubtitle">Astrological readings suggest an
+                                imbalance. Discover customized remedies to clear negative karmic influences.</p>
+                        </div>
+
+                        <!-- Action Cards -->
+                        <div id="nagaActionCards" class="result-actions">
+                            <div class="ra-card">
+                                <div class="ra-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                                <div class="ra-content">
+                                    <h4>Perform Remedies</h4>
+                                    <p>Participate in sacred rituals to pacify Naga Dosha.</p>
+                                    <a href="https://www.astroved.com/dosha-pariharam/?promo=AVP_CP1_naga_dosha"
+                                        target="_blank" class="ra-btn">Explore Rituals <i
+                                            class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+                                </div>
+                            </div>
+                            <div class="ra-card ra-secondary">
+                                <div class="ra-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                <div class="ra-content">
+                                    <h4>Ease My Naga Dosha</h4>
+                                    <p>Seek relief from Naga Dosha and invite peace, protection, and family well-being.
+                                    </p>
+                                    <a href="https://www.astroved.com/dosha-pariharam/sarpa-dosha-remedies/?promo=AVP_CP2_naga_dosha"
+                                        target="_blank" class="ra-btn-alt">Ease My Naga Dosha <i
+                                            class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Trust Footer -->
+                <!-- <div class="form-trust-footer" style="margin-top: 1.5rem; justify-content: center; opacity: 0.9;">
+                    <span class="trust-badge" style="color: #4a1c11;"><i class="fa-solid fa-shield-halved"></i> 100% Private & Secure</span>
+                    <span class="trust-divider" style="background: rgba(74, 28, 17, 0.3);"></span>
+                    <span class="trust-text" style="color: #4a1c11;">Accurate Predictions</span>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Features Bar (Premium Static Layout) - HIDDEN AS REQUESTED -->
+        <!--
+        <div class="features-bar-container">
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <span class="feature-title">Detailed Report</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <span class="feature-title">Dosha Severity</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-wave-square"></i></div>
+                    <span class="feature-title">Effects & Impact</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-spa"></i></div>
+                    <span class="feature-title">Effective Remedies</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <span class="feature-title">Expert Guidance</span>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- Legacy sections removed to make way for the new full landing page layout -->
+    </main>
+
+
+    <!-- Result Section (Hidden for now) -->
+    <!-- ... Rest of the document remains commented out or handled ... -->
+    <script>
+        document.getElementById('search-toggle').addEventListener('click', function (e) {
+            e.preventDefault();
+            const isMobile = window.innerWidth <= 1040;
+            if (isMobile) {
+                // On mobile: toggle dedicated search bar below navbar
+                const mobileSearchBar = document.getElementById('mobileSearchBar');
+                if (mobileSearchBar) {
+                    mobileSearchBar.classList.toggle('open');
+                    if (mobileSearchBar.classList.contains('open')) {
+                        document.getElementById('mobileSearchInput').focus();
+                    }
+                }
+            } else {
+                // On desktop: existing expandable inline search
+                const container = this.parentElement;
+                container.classList.toggle('active');
+                if (container.classList.contains('active')) {
+                    container.querySelector('.search-input').focus();
+                }
+            }
+        });
+
+        // Mobile Navigation Toggle Handler & Backdrop
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+        function toggleMobileMenu(open) {
+            const shouldOpen = open !== undefined ? open : !navLinks.classList.contains('mobile-active');
+            if (shouldOpen) {
+                navLinks.classList.add('mobile-active');
+                if (mobileNavBackdrop) mobileNavBackdrop.classList.add('active');
+                if (mobileNavToggle) mobileNavToggle.querySelector('i').className = 'fas fa-xmark';
+                document.body.style.overflow = 'hidden';
+            } else {
+                navLinks.classList.remove('mobile-active');
+                if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('active');
+                if (mobileNavToggle) mobileNavToggle.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (mobileNavToggle && navLinks) {
+            mobileNavToggle.addEventListener('click', function () {
+                toggleMobileMenu();
+            });
+
+            if (mobileNavBackdrop) {
+                mobileNavBackdrop.addEventListener('click', function () {
+                    toggleMobileMenu(false);
+                });
+            }
+
+            // Smooth Toggle Mobile Dropdowns on Click
+            const mobileDropdowns = navLinks.querySelectorAll('.dropdown > a');
+            mobileDropdowns.forEach(dropdownLink => {
+                dropdownLink.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 1040) {
+                        e.preventDefault();
+                        const parentDropdown = this.parentElement;
+                        parentDropdown.classList.toggle('active');
+                    }
+                });
+            });
+        }
+
+        // Cinematic Text Animation Sequence
+        const problems = [
+            "💍 Marriage Delays",
+            "💼 Career Obstacles",
+            "💰 Financial Issues",
+            "🏡 Family Problems",
+            "👶 Childbirth Challenges"
+        ];
+
+        const sceneIntro = document.getElementById("scene-intro");
+        const sceneProblem = document.getElementById("scene-problem");
+        const problemTextDisplay = document.getElementById("problem-text-display");
+        const sceneFinal = document.getElementById("scene-final");
+
+        let currentProblemIndex = 0;
+
+        function playSequence() {
+            // Reset
+            if (!sceneIntro) return;
+            sceneIntro.classList.remove('active');
+            sceneProblem.classList.remove('active');
+            sceneFinal.classList.remove('active');
+            currentProblemIndex = 0;
+
+            // Phase 1: Intro Fade in
+            setTimeout(() => {
+                sceneIntro.classList.add('active');
+            }, 100);
+
+            // Phase 2: Fade Intro out
+            setTimeout(() => {
+                sceneIntro.classList.remove('active');
+            }, 2500);
+
+            // Phase 3: Loop Problems
+            setTimeout(() => {
+                loopProblems();
+            }, 3300);
+        }
+
+        function loopProblems() {
+            if (currentProblemIndex < problems.length) {
+                problemTextDisplay.textContent = problems[currentProblemIndex];
+                sceneProblem.classList.add('active');
+
+                setTimeout(() => {
+                    sceneProblem.classList.remove('active');
+                    currentProblemIndex++;
+                    setTimeout(loopProblems, 800); // Wait for fade out
+                }, 2000); // Hold for 2 seconds
+            } else {
+                // Phase 4: Final Reveal
+                setTimeout(() => {
+                    sceneFinal.classList.add('active');
+                }, 100);
+
+                // Phase 5: Reset after pause
+                setTimeout(() => {
+                    sceneFinal.classList.remove('active');
+                    setTimeout(playSequence, 1000); // Restart sequence
+                }, 6000); // Show final scene for 6s
+            }
+        }
+
+        // Start animation loop
+        if (document.getElementById("animation-frame")) {
+            setTimeout(playSequence, 500);
+        }
+
+        // Form Reveal Function (For Hero CTA, Banner CTA & Consultation image)
+        function openCalculator(e) {
+            if (e) e.preventDefault();
+            const calculatorSection = document.getElementById('calculator-section');
+            const nagaFormCard = document.getElementById('nagaFormCard');
+            if (calculatorSection) {
+                calculatorSection.classList.remove('closing');
+                calculatorSection.style.display = 'block';
+                if (nagaFormCard) nagaFormCard.style.display = 'block';
+                setTimeout(() => {
+                    calculatorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 50);
+            }
+        }
+
+        const btnShowCalculator = document.getElementById('btn-show-calculator');
+        if (btnShowCalculator) {
+            btnShowCalculator.addEventListener('click', openCalculator);
+        }
+
+        const btnBannerCheck = document.getElementById('btn-banner-check');
+        if (btnBannerCheck) {
+            btnBannerCheck.addEventListener('click', openCalculator);
+        }
+
+        // Global delegation for any link targeting #calculator-section
+        document.addEventListener('click', function (e) {
+            const openLink = e.target.closest('a[href="#calculator-section"]');
+            if (openLink) {
+                openCalculator(e);
+            }
+        });
+
+        // Custom Dropdown Logic
+        const genderSelect = document.getElementById('genderSelectWrapper');
+        if (genderSelect) {
+            const genderInput = document.getElementById('genderInput');
+            const genderValue = genderSelect.querySelector('.custom-select-value');
+            const options = genderSelect.querySelectorAll('.custom-option');
+
+            genderSelect.addEventListener('click', function (e) {
+                e.stopPropagation();
+                this.classList.toggle('open');
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const val = this.getAttribute('data-value');
+                    genderValue.textContent = val;
+                    genderInput.value = val;
+                    genderSelect.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!genderSelect.contains(e.target)) {
+                    genderSelect.classList.remove('open');
+                }
+            });
+        }
+
+        // Form Submit to Show Results
+        const nagaForm = document.getElementById('nagaCalculatorForm');
+        const formResultContainer = document.getElementById('formResultContainer');
+        const nagaResultTitle = document.getElementById('nagaResultTitle');
+        const nagaResultIcon = document.getElementById('nagaResultIcon');
+        const nagaResultText = document.getElementById('nagaResultText');
+        const nagaActionCards = document.getElementById('nagaActionCards');
+
+        let calculateClickCount = 0;
+
+        const nagaFormCard = document.getElementById('nagaFormCard');
+
+        if (nagaForm) {
+            nagaForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent page reload
+                calculateClickCount++;
+
+                if (calculateClickCount === 1) {
+                    nagaResultTitle.style.color = '#4a1c11'; // Warm brown matching site theme
+                    nagaResultIcon.className = 'fa-solid fa-triangle-exclamation';
+                    nagaResultText.textContent = 'You are under the influence of Naga Dosha';
+                    nagaActionCards.style.display = 'flex';
+
+                    document.getElementById('resultIconRing').className = 'result-icon-ring';
+                    document.getElementById('nagaResultSubtitle').style.display = 'block';
+                } else {
+                    nagaResultTitle.style.color = '#15803d'; // Warm rich green
+                    nagaResultIcon.className = 'fa-solid fa-check';
+                    nagaResultText.textContent = 'You are NOT under the influence of Naga Dosha';
+                    nagaActionCards.style.display = 'none';
+
+                    document.getElementById('resultIconRing').className = 'result-icon-ring success';
+                    document.getElementById('nagaResultSubtitle').style.display = 'none';
+                }
+
+                // Hide Form Card and Show Standalone Result Card
+                if (nagaFormCard) nagaFormCard.style.display = 'none';
+                if (formResultContainer) formResultContainer.style.display = 'block';
+            });
+        }
+
+        // Smooth Form & Result Dismiss / Close Logic
+        function closeCalculator() {
+            const calculatorSection = document.getElementById('calculator-section');
+            const nagaFormCard = document.getElementById('nagaFormCard');
+            const formResultContainer = document.getElementById('formResultContainer');
+            const nagaForm = document.getElementById('nagaCalculatorForm');
+
+            if (calculatorSection) {
+                // Add smooth closing transition class
+                calculatorSection.classList.add('closing');
+
+                // Wait for the smooth 350ms opacity & scale transition to finish
+                setTimeout(() => {
+                    calculatorSection.style.display = 'none';
+                    calculatorSection.classList.remove('closing');
+
+                    // Reset form inputs & state for next time
+                    if (nagaForm) nagaForm.reset();
+                    const genderValue = document.querySelector('#genderSelectWrapper .custom-select-value');
+                    if (genderValue) genderValue.textContent = 'Select';
+                    const genderInput = document.getElementById('genderInput');
+                    if (genderInput) genderInput.value = '';
+
+                    if (nagaFormCard) nagaFormCard.style.display = 'block';
+                    if (formResultContainer) formResultContainer.style.display = 'none';
+                }, 350);
+            }
+        }
+
+        // Global Event Delegation for Dismiss Buttons
+        document.addEventListener('click', function (e) {
+            const dismissBtn = e.target.closest('.btn-dismiss') || e.target.closest('#btnDismissForm') || e.target.closest('#btnDismissResult');
+            if (dismissBtn) {
+                e.preventDefault();
+                closeCalculator();
+            }
+        });
+
+        // ==========================================
+        // 12 Types of Naga Dosha Carousel Logic
+        // ==========================================
+        const doshaTypesData = [
+            {
+                name: "Ananta Naga Dosha",
+                number: "1 of 12",
+                rahu: "Rahu in 1st House",
+                ketu: "Ketu in 7th House",
+                desc: "This dosha is believed to cause delays in marriage and relationship challenges. It can also create mental stress and lack of harmony in married life.",
+                effects: ["Delay in marriage", "Relationship issues", "Mental stress", "Lack of peace"]
+            },
+            {
+                name: "Kulik Naga Dosha",
+                number: "2 of 12",
+                rahu: "Rahu in 2nd House",
+                ketu: "Ketu in 8th House",
+                desc: "Associated with financial instability, speech hurdles, or misunderstandings among family members and close relatives.",
+                effects: ["Financial losses", "Family disputes", "Speech hurdles", "Unexpected expenses"]
+            },
+            {
+                name: "Vasuki Naga Dosha",
+                number: "3 of 12",
+                rahu: "Rahu in 3rd House",
+                ketu: "Ketu in 9th House",
+                desc: "May cause obstacles in confidence, friction with siblings, and frequent hurdles in career growth or promotion opportunities.",
+                effects: ["Low self-confidence", "Sibling friction", "Career stagnation", "Frequent travel delays"]
+            },
+            {
+                name: "Shankhpal Naga Dosha",
+                number: "4 of 12",
+                rahu: "Rahu in 4th House",
+                ketu: "Ketu in 10th House",
+                desc: "Impacts domestic peace, home environment, mother's health, and stability in land, property, or vehicle matters.",
+                effects: ["Property disputes", "Disturbed mental peace", "Mother's health issues", "Vehicle troubles"]
+            },
+            {
+                name: "Padma Naga Dosha",
+                number: "5 of 12",
+                rahu: "Rahu in 5th House",
+                ketu: "Ketu in 11th House",
+                desc: "Creates challenges in higher education, childbirth, creative pursuits, and maintaining spiritual focus.",
+                effects: ["Educational hurdles", "Childbirth delays", "Speculation losses", "Concentration stress"]
+            },
+            {
+                name: "Mahapadma Naga Dosha",
+                number: "6 of 12",
+                rahu: "Rahu in 6th House",
+                ketu: "Ketu in 12th House",
+                desc: "May bring health complications, hidden opponents, or legal challenges, though it grants resilience over time.",
+                effects: ["Health complications", "Secret opponents", "Legal obstacles", "Financial liabilities"]
+            },
+            {
+                name: "Takshak Naga Dosha",
+                number: "7 of 12",
+                rahu: "Rahu in 7th House",
+                ketu: "Ketu in 1st House",
+                desc: "Directly influences partnerships, business ventures, and marital harmony, requiring extra patience and care.",
+                effects: ["Business partner disputes", "Delayed marriage", "Marital misunderstandings", "Public conflicts"]
+            },
+            {
+                name: "Karkotaka Naga Dosha",
+                number: "8 of 12",
+                rahu: "Rahu in 8th House",
+                ketu: "Ketu in 2nd House",
+                desc: "Related to sudden unexpected events, ancestral property delays, and emotional fluctuations in daily life.",
+                effects: ["Sudden setbacks", "Ancestral property delays", "Health vulnerability", "Wealth fluctuations"]
+            },
+            {
+                name: "Shankhanaad Naga Dosha",
+                number: "9 of 12",
+                rahu: "Rahu in 9th House",
+                ketu: "Ketu in 3rd House",
+                desc: "Affects overall luck, higher spiritual learning, relationship with mentors, and long-distance journeys.",
+                effects: ["Delayed fortune", "Higher education hurdles", "Fluctuating luck", "Spiritual confusion"]
+            },
+            {
+                name: "Patak Naga Dosha",
+                number: "10 of 12",
+                rahu: "Rahu in 10th House",
+                ketu: "Ketu in 4th House",
+                desc: "Impacts professional reputation, job stability, authority figures, and public recognition in career.",
+                effects: ["Frequent job changes", "Career setbacks", "Lack of recognition", "Workplace stress"]
+            },
+            {
+                name: "Vishakta Naga Dosha",
+                number: "11 of 12",
+                rahu: "Rahu in 11th House",
+                ketu: "Ketu in 5th House",
+                desc: "Influences financial gains, social networks, elder siblings, and fulfillment of long-term aspirations.",
+                effects: ["Fluctuating income", "Social isolation", "Delayed rewards", "Desire fulfillment hurdles"]
+            },
+            {
+                name: "Sheshnag Naga Dosha",
+                number: "12 of 12",
+                rahu: "Rahu in 12th House",
+                ketu: "Ketu in 6th House",
+                desc: "Related to unexpected expenditures, sleep disturbances, foreign travel challenges, and spiritual growth.",
+                effects: ["High expenditures", "Sleep disturbances", "Foreign travel delays", "Unexplained worries"]
+            }
+        ];
+
+        let currentDoshaIndex = 0;
+        const doshaTypeTitle = document.getElementById('doshaTypeTitle');
+        const doshaTypeBadge = document.getElementById('doshaTypeBadge');
+        const doshaRahuText = document.getElementById('doshaRahuText');
+        const doshaKetuText = document.getElementById('doshaKetuText');
+        const doshaTypeDesc = document.getElementById('doshaTypeDesc');
+        const doshaTypeEffects = document.getElementById('doshaTypeEffects');
+        const doshaInfoCard = document.getElementById('doshaInfoCard');
+
+        function updateDoshaCard(index) {
+            if (!doshaTypeTitle) return;
+            const item = doshaTypesData[index];
+
+            if (doshaInfoCard) doshaInfoCard.style.opacity = '0.4';
+
+            setTimeout(() => {
+                if (doshaTypeTitle) doshaTypeTitle.textContent = item.name;
+                if (doshaTypeBadge) doshaTypeBadge.textContent = item.number;
+                if (doshaRahuText) doshaRahuText.textContent = item.rahu;
+                if (doshaKetuText) doshaKetuText.textContent = item.ketu;
+                if (doshaTypeDesc) doshaTypeDesc.textContent = item.desc;
+
+                if (doshaTypeEffects) {
+                    doshaTypeEffects.innerHTML = '';
+                    item.effects.forEach(effect => {
+                        const li = document.createElement('li');
+                        li.textContent = effect;
+                        doshaTypeEffects.appendChild(li);
+                    });
+                }
+
+                if (doshaInfoCard) doshaInfoCard.style.opacity = '1';
+            }, 180);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const doshaPrevBtn = document.getElementById('doshaPrevBtn');
+            const doshaNextBtn = document.getElementById('doshaNextBtn');
+
+            if (doshaPrevBtn && doshaNextBtn) {
+                doshaPrevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentDoshaIndex = (currentDoshaIndex - 1 + doshaTypesData.length) % doshaTypesData.length;
+                    updateDoshaCard(currentDoshaIndex);
+                });
+
+                doshaNextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentDoshaIndex = (currentDoshaIndex + 1) % doshaTypesData.length;
+                    updateDoshaCard(currentDoshaIndex);
+                });
+            }
+        });
+    </script>
+    <!-- ==========================================
+         LANDING PAGE SECTIONS
+         ========================================== -->
+
+    <!-- Section 1: Are You Facing These Problems? -->
+    <section class="landing-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Are You Facing These Problems?</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <img src="images/w1.png" alt="Marriage Delays" class="pc-img">
+                    <div class="pc-icon-wrapper"><i class="fa-solid fa-heart"></i></div>
+                    <h4>Marriage Delays</h4>
+                    <p>Facing obstacles in getting married or delays in marriage.</p>
+                </div>
+                <div class="problem-card">
+                    <img src="images/w5.png" alt="Career Obstacles" class="pc-img">
+                    <div class="pc-icon-wrapper"><i class="fa-solid fa-briefcase"></i></div>
+                    <h4>Career Obstacles</h4>
+                    <p>Struggles in career growth, job stability or success.</p>
+                </div>
+                <div class="problem-card">
+                    <img src="images/w3.png" alt="Financial Issues" class="pc-img">
+                    <div class="pc-icon-wrapper"><i class="fa-solid fa-coins"></i></div>
+                    <h4>Financial Issues</h4>
+                    <p>Money problems, instability and unexpected losses.</p>
+                </div>
+                <div class="problem-card">
+                    <img src="images/w2.png" alt="Family Problems" class="pc-img">
+                    <div class="pc-icon-wrapper"><i class="fa-solid fa-users"></i></div>
+                    <h4>Family Problems</h4>
+                    <p>Conflicts, misunderstandings and lack of harmony.</p>
+                </div>
+                <div class="problem-card">
+                    <img src="images/w4.png" alt="Childbirth Issues" class="pc-img">
+                    <div class="pc-icon-wrapper"><i class="fa-solid fa-baby-carriage"></i></div>
+                    <h4>Childbirth Issues</h4>
+                    <p>Difficulties in conceiving or concerns related to children.</p>
+                </div>
+            </div>
+
+            <!-- Banner Section -->
+            <div class="chart-banner">
+                <div class="banner-content">
+                    <h3>Your Birth Chart Holds the Answer</h3>
+                    <p>Find out if Naga Dosha is influencing your life and get the right remedies.</p>
+                    <a href="#calculator-section" id="btn-banner-check" class="banner-btn">Check Your Naga Dosha
+                        &rarr;</a>
+                </div>
+                <img src="images/book2.png" alt="Birth Chart Naga Book" class="banner-right-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: What is Naga Dosha? -->
+    <section class="landing-section bg-alt">
+        <div class="section-container">
+            <div class="what-is-grid">
+                <div class="what-is-img-container">
+                    <img src="images/shivan.png" alt="Lord Shiva Naga Dosha" class="what-is-img">
+                </div>
+                <div class="what-is-text">
+                    <h3>What is <span class="highlight-gold">Naga Dosha?</span></h3>
+                    <p>Naga Dosha occurs in a birth chart when Rahu and Ketu are placed in certain houses in relation to
+                        each other. It is believed to be the result of past life karma related to serpents.</p>
+
+                    <div class="info-cards-grid">
+                        <div class="info-card-small">
+                            <div class="info-card-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                            <h5>Karmic Influence</h5>
+                            <p>Result of past life actions towards serpents.</p>
+                        </div>
+                        <div class="info-card-small">
+                            <div class="info-card-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+                            <h5>Astrological Impact</h5>
+                            <p>Affects different areas like marriage, career, health.</p>
+                        </div>
+                        <div class="info-card-small">
+                            <div class="info-card-icon"><i class="fa-solid fa-spa"></i></div>
+                            <h5>Remedies Available</h5>
+                            <p>Can be reduced with proper remedies and prayers.</p>
+                        </div>
+                        <div class="info-card-small">
+                            <div class="info-card-icon"><i class="fa-solid fa-dove"></i></div>
+                            <h5>Peace & Prosperity</h5>
+                            <p>Brings harmony, happiness and success in life.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Types of Naga Dosha -->
+    <section class="landing-section">
+        <div class="section-container">
+
+
+            <div class="types-grid">
+                <!-- Wheel Graphic Centered -->
+                <div class="types-wheel-wrapper">
+                    <img src="images/types_2.png" alt="12 Types of Naga Dosha Wheel" class="types-wheel-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Effects of Naga Dosha -->
+    <section class="landing-section bg-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Effects of Naga Dosha</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="effects-grid">
+                <div class="effect-card">
+                    <img src="images/e2.png" alt="Marriage Delays" class="effect-img">
+                    <h5>Marriage Delays</h5>
+                </div>
+                <div class="effect-card">
+                    <img src="images/e3.png" alt="Career Struggles" class="effect-img">
+                    <h5>Career Struggles</h5>
+                </div>
+                <div class="effect-card">
+                    <img src="images/e5.png" alt="Financial Instability" class="effect-img">
+                    <h5>Financial Instability</h5>
+                </div>
+                <div class="effect-card">
+                    <img src="images/e4.png" alt="Health Issues" class="effect-img">
+                    <h5>Health Issues</h5>
+                </div>
+                <div class="effect-card">
+                    <img src="images/e1.png" alt="Childbirth Problems" class="effect-img">
+                    <h5>Childbirth Problems</h5>
+                </div>
+                <div class="effect-card">
+                    <img src="images/e6.png" alt="Family Conflicts" class="effect-img">
+                    <h5>Family Conflicts</h5>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Section 6: Remedies for Naga Dosha -->
+    <section class="landing-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Remedies for Naga Dosha</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="remedies-grid">
+                <div>
+                    <div class="remedies-cards">
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-om rc-icon"></i>
+                            <h5>Naga Puja</h5>
+                            <p>Perform puja on Naga Panchami</p>
+                        </div>
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-hands rc-icon"></i>
+                            <h5>Rudrabhishekam</h5>
+                            <p>Offer prayers to Lord Shiva</p>
+                        </div>
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-book-open rc-icon"></i>
+                            <h5>Chant Mantras</h5>
+                            <p>Chant powerful mantras</p>
+                        </div>
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-bottle-droplet rc-icon"></i>
+                            <h5>Donate Milk</h5>
+                            <p>Donate milk, clothes or essentials</p>
+                        </div>
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-calendar-check rc-icon"></i>
+                            <h5>Naga Panchami</h5>
+                            <p>Worship snakes on Naga Panchami</p>
+                        </div>
+                        <div class="remedy-card">
+                            <i class="fa-solid fa-vihara rc-icon"></i>
+                            <h5>Visit Temples</h5>
+                            <p>Seek blessings at Naga Temples</p>
+                        </div>
+                    </div>
+                    <div class="btn-center-wrapper" style="margin-top: 28px;">
+                        <a href="https://www.astroved.com/dosha-pariharam/?promo=AVP_CP1_naga_dosha" target="_blank"
+                            class="banner-btn" style="font-size: 1rem; padding: 14px 42px; min-width: 260px;">View All
+                            Remedies
+                            &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Real Page Element Consultation Card -->
+                <div class="consultation-card-real">
+                    <div class="consultation-card-bg">
+                        <img src="images/shivan.png" alt="Astrologer Consultation" class="consultation-bg-art">
+                        <div class="consultation-overlay"></div>
+                    </div>
+                    <div class="consultation-card-content">
+
+                        <h3 class="consultation-heading">
+                            Talk To Our Astrologer To Know More About <span class="text-gold-accent">Naga Dosha</span>
+                        </h3>
+                        <p class="consultation-desc">
+                            Get detailed insights and powerful remedies to reduce its effects on your life.
+                        </p>
+                        <div class="consultation-features">
+                            <div class="cf-item"><i class="fa-solid fa-circle-check"></i> 1-on-1 Personalized Session
+                            </div>
+                            <div class="cf-item"><i class="fa-solid fa-circle-check"></i> Accurate Dosha Analysis</div>
+                        </div>
+                        <a href="https://www.astroved.com/AstrologerScheduler.aspx?id=115&promo=SL_SP_LAC-1"
+                            target="_blank" class="btn-consultation-real">
+                            <span>Talk to Astrologer</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: FAQ & Related Searches (Redesigned & Premium) -->
+    <section class="landing-section faq-redesigned-section" id="faq">
+        <div class="section-container">
+            <div class="footer-sections-grid">
+
+                <!-- FAQ Left Panel -->
+                <div class="faq-column">
+                    <div class="section-header-left">
+                        <div class="header-badge-icon"><i class="fa-solid fa-circle-question"></i></div>
+                        <div>
+                            <h2 class="faq-redesigned-title">Frequently Asked Questions</h2>
+                            <p class="faq-redesigned-sub">Find clear answers to common questions about Naga Dosha &amp;
+                                remedies</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is Naga Dosha?</span>
+                                <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Naga Dosha (or Sarpa Dosha) occurs in Vedic astrology when shadow planets Rahu or
+                                    Ketu afflict key houses in your birth chart (Janma Kundali). It is believed to
+                                    represent unresolved karmic patterns that require spiritual remedies.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How is Naga Dosha calculated?</span>
+                                <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>It is calculated by analyzing the exact positions of Rahu and Ketu relative to the
+                                    Lagna (Ascendant), Moon sign, and Sun sign at the time of your birth using authentic
+                                    Vedic ephemeris algorithms.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can Naga Dosha affect marriage?</span>
+                                <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, when Rahu or Ketu is placed in the 1st, 2nd, 5th, 7th, or 8th house, it can
+                                    cause delays in finding a suitable partner, misunderstandings, or friction in
+                                    married life. Performing pacification pujas helps neutralize these effects.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How can Naga Dosha be reduced?</span>
+                                <div class="faq-toggle-btn"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Naga Dosha can be effectively pacified by performing dedicated remedies such as Naga
+                                    Puja on Naga Panchami, Rudrabhishekam for Lord Shiva, chanting Rahu-Ketu mantras,
+                                    wearing energized gemstone remedies, and visiting sacred temples.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Searches Right Panel -->
+                <div class="related-column">
+                    <div class="related-panel-card">
+                        <div class="section-header-left">
+                            <div class="header-badge-icon icon-amber"><i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div>
+                                <h2 class="faq-redesigned-title">Related Searches</h2>
+                                <p class="faq-redesigned-sub">Explore popular topics &amp; guide queries</p>
+                            </div>
+                        </div>
+
+                        <div class="related-chips">
+                            <a href="#what-is" class="related-chip"><i class="fa-solid fa-magnifying-glass"></i> What is
+                                Naga Dosha?</a>
+                            <a href="#types" class="related-chip"><i class="fa-solid fa-magnifying-glass"></i> Types of
+                                Naga Dosha</a>
+                            <a href="#calculator-section" class="related-chip"><i
+                                    class="fa-solid fa-magnifying-glass"></i> Naga Dosha in Horoscope</a>
+                            <a href="#effects" class="related-chip"><i class="fa-solid fa-magnifying-glass"></i>
+                                Symptoms of Naga Dosha</a>
+                            <a href="#remedies" class="related-chip"><i class="fa-solid fa-magnifying-glass"></i>
+                                Remedies for Naga Dosha</a>
+                            <a href="#faq" class="related-chip"><i class="fa-solid fa-magnifying-glass"></i> How long
+                                does Naga Dosha last?</a>
+                        </div>
+
+                        <div class="related-cta-box">
+                            <div class="rcb-header-line">
+                                <div class="rcb-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                                <strong class="rcb-title">Ask About Naga Dosha</strong>
+                            </div>
+                            <a href="https://www.astroved.com/AstrologerScheduler.aspx?id=115&promo=SL_SP_LAC-1"
+                                target="_blank" class="rcb-btn">Consults Astrologer <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion Toggle Script
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            if (question) {
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-top-section">
+            <div class="footer-inner">
+                <!-- 5-Column Grid -->
+                <div class="footer-grid">
+
+                    <!-- Column 1: KNOW US -->
+                    <div class="footer-col">
+                        <h3 class="footer-col-title">KNOW US</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="https://www.astroved.com/about-us">About</a></li>
+                            <li><a href="https://www.astroved.com/board-of-advisors">Board Of Advisors</a></li>
+                            <li><a href="https://www.astroved.com/rnd-institute">R&amp;D Institute</a></li>
+                            <li><a href="https://www.astroved.com/faqs">FAQs</a></li>
+                            <li><a href="https://www.astroved.com/careers">Careers</a></li>
+                            <li><a href="https://www.astroved.com/partner-sites">Partner Sites</a></li>
+                            <li><a href="https://www.astroved.com/blogs">Blogs</a></li>
+                            <li><a href="https://www.astroved.com/articles">Articles</a></li>
+                            <li><a href="https://www.astroved.com/podcast">Podcast</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: ASTROWORLD -->
+                    <div class="footer-col">
+                        <h3 class="footer-col-title">ASTROWORLD</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="https://www.astroved.com/astrology-services">Astrology Services</a></li>
+                            <li><a href="https://www.astroved.com/astropedia">Astropedia</a></li>
+                            <li><a href="https://www.astroved.com/priest-services">Priest Services</a></li>
+                            <li><a href="https://www.astroved.com/love-marriage">Love &amp; Marriage</a></li>
+                            <li><a href="https://www.astroved.com/family">Family</a></li>
+                            <li><a href="https://www.astroved.com/business-career">Business &amp; Career</a></li>
+                            <li><a href="https://www.astroved.com/wealth-finance">Wealth &amp; Finance</a></li>
+                            <li><a href="https://www.astroved.com/education">Education</a></li>
+                            <li><a href="https://www.astroved.com/health-beauty">Health &amp; Beauty</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: LEGAL -->
+                    <div class="footer-col">
+                        <h3 class="footer-col-title">LEGAL</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="https://www.astroved.com/disclaimer">Disclaimer</a></li>
+                            <li><a href="https://www.astroved.com/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="https://www.astroved.com/return-refund-policy">Return &amp; Refund Policy</a>
+                            </li>
+                            <li><a href="https://www.astroved.com/security-policy">Security Policy</a></li>
+                            <li><a href="https://www.astroved.com/shipment-policy">Shipment Policy</a></li>
+                            <li><a href="https://www.astroved.com/terms-and-conditions">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: SUPPORT -->
+                    <div class="footer-col">
+                        <h3 class="footer-col-title">SUPPORT</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="mailto:support@astroved.com">support@astroved.com</a></li>
+                            <li><a href="https://www.astroved.com/offline-payment">Offline Payment</a></li>
+                            <li><a href="https://www.astroved.com/contact-us">Contact Us</a></li>
+                            <li><a href="https://www.astroved.com/feedback">Feedback</a></li>
+                            <li><a href="https://www.astroved.com/sitemap">Site Map</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: CONNECT -->
+                    <div class="footer-col">
+                        <h3 class="footer-col-title">CONNECT</h3>
+                        <div class="footer-connect-group">
+                            <div class="connect-item">
+                                <strong class="connect-label">Customer Care</strong>
+                                <a href="tel:+919677391108" class="connect-val">+91 9677391108</a>
+                                <a href="tel:+914443419898" class="connect-val">+91 44 43419898</a>
+                            </div>
+                            <div class="connect-item">
+                                <strong class="connect-label">Toll Free (India Only)</strong>
+                                <a href="tel:18001029098" class="connect-val">1800 102 9098</a>
+                            </div>
+                            <div class="connect-item">
+                                <strong class="connect-label">USA Contact Number</strong>
+                                <a href="tel:+14129273625" class="connect-val">+1 412-927 3625</a>
+                            </div>
+                            <div class="connect-item">
+                                <strong class="connect-label">Whatsapp</strong>
+                                <a href="https://wa.me/919677391109" target="_blank" class="connect-val">+91
+                                    9677391109</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Lower Row: App Download & Badges -->
+                <div class="footer-lower-row">
+                    <div class="app-download-section">
+                        <span class="download-app-title">Download AstroVed App</span>
+                        <div class="app-download-buttons">
+                            <a href="https://play.google.com/store/apps/details?id=com.astroved.astropedia"
+                                target="_blank" class="app-img-link">
+                                <img src="images/image_copy_5.png" alt="Google Play" class="footer-app-img">
+                            </a>
+                            <a href="https://apps.apple.com/app/astroved" target="_blank" class="app-img-link">
+                                <img src="images/image_copy_6.png" alt="App Store" class="footer-app-img">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-badges-row">
+                        <img src="images/image_copy.png" alt="25 Years Excellence in Services" class="footer-badge-img"
+                            style="height: 60px;">
+                        <img src="images/image_copy_2.png" alt="PodBean 3,000,000 Downloads" class="footer-badge-img"
+                            style="height: 42px;">
+                        <img src="images/image_copy_3.png" alt="ISO 9001:2015 Certified" class="footer-badge-img"
+                            style="height: 42px;">
+                        <img src="images/image_copy_4.png" alt="Secured by Sectigo" class="footer-badge-img"
+                            style="height: 42px;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Purple Banner -->
+        <div class="footer-bottom-bar">
+            <div class="footer-inner bottom-inner">
+                <div class="copyright-text">
+                    &copy; 2001 - 2026 AstroVed - All rights reserved.
+                </div>
+                <div class="social-follow-group">
+                    <span class="follow-title">Follow us :</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn facebook" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn whatsapp" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="social-btn x-twitter" aria-label="Twitter"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-btn youtube" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-btn instagram" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn linkedin" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

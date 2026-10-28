@@ -1,0 +1,23 @@
+:root {
+    /* Color Palette */
+    --bg-dark: #f5f7fa; /* Main body background */
+    --bg-card: #ffffff; /* Solid white for cards */
+    --bg-card-light: #f0f3f8; /* Soft slightly blueish grey for alternates */
+    --primary-blue: #183a77; /* Astroved Deep Blue */
+    --accent-gold: #f37021; /* Astroved Orange */
+    --accent-gold-hover: #d15d18;
+    --text-main: #2a2a2a; /* Dark grey for primary text */
+    --text-muted: #555555; /* Medium grey for secondary text */
+    --border-color: #e2e8f0;
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+}

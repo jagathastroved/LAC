@@ -1,0 +1,585 @@
+/* ==========================================
+   ASTROVED FOOTER COMPONENT STYLES (EXACT ASSETS)
+   Matching provided badge and button reference images
+   ========================================== */
+
+/* Main Footer Container */
+.site-footer {
+    font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    position: relative;
+    width: 100%;
+}
+
+.footer-top-section {
+    background-color: #EBEBFF;
+    padding: 45px 0 35px 0;
+}
+
+.footer-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* 5-Column Main Grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    margin-bottom: 35px;
+}
+
+/* Column General Styling */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0 0 18px 0;
+}
+
+/* Links List */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 10px;
+}
+
+.footer-links-list a {
+    font-size: 0.88rem;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: inline-block;
+    line-height: 1.4;
+}
+
+.footer-links-list a:hover {
+    color: #5a52e5;
+    text-decoration: underline;
+}
+
+/* Connect Column */
+.footer-connect-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.connect-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.connect-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.connect-val {
+    font-size: 0.86rem;
+    color: #334155;
+    text-decoration: none;
+    line-height: 1.45;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.connect-val:hover {
+    color: #5a52e5;
+    text-decoration: underline;
+}
+
+/* Lower Section: App Download & Badges */
+.footer-lower-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.app-download-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.download-app-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.app-download-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.app-img-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.app-img-link:hover {
+    transform: translateY(-2px);
+}
+
+.footer-app-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.app-btn-exact {
+    background: #ffffff;
+    border: 1.5px solid #8580E8;
+    border-radius: 14px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(133, 128, 232, 0.12);
+}
+
+.app-btn-exact:hover {
+    background: #635BFF;
+    color: #ffffff;
+    border-color: #635BFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
+}
+
+.app-btn-exact i {
+    font-size: 1.3rem;
+    color: #2D2D2D;
+    transition: color 0.2s ease;
+}
+
+.app-btn-exact:hover i {
+    color: #ffffff;
+}
+
+/* Badges Row */
+.footer-badges-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-badge-img {
+    width: auto;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.footer-badge-img:hover {
+    transform: scale(1.04);
+}
+
+/* 1. Exact 25 Years Badge */
+.badge-years-exact {
+    background: #ffffff;
+    border: 2.5px solid #0056D2;
+    border-radius: 36px;
+    padding: 6px 12px 8px 12px;
+    width: 72px;
+    height: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 86, 210, 0.12);
+    box-sizing: border-box;
+}
+
+.years-badge-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.yb-stars {
+    font-size: 0.45rem;
+    color: #0056D2;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 1px;
+}
+
+.yb-excellence {
+    font-size: 0.42rem;
+    font-weight: 800;
+    color: #0056D2;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    margin-bottom: 1px;
+}
+
+.yb-number {
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: #0056D2;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.yb-years-banner {
+    background: #0056D2;
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    width: 112%;
+    padding: 2px 0;
+    margin: 1px 0;
+    text-align: center;
+}
+
+.yb-star-bottom {
+    font-size: 0.45rem;
+    color: #0056D2;
+    line-height: 1;
+    margin-top: 1px;
+}
+
+.yb-services {
+    font-size: 0.42rem;
+    font-weight: 800;
+    color: #0056D2;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    font-style: italic;
+}
+
+/* 2. Exact PodBean Badge */
+.badge-podbean-exact {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 56px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.podbean-mic-icon {
+    width: 36px;
+    height: 36px;
+    background: #FA4628;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.podbean-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.podbean-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.podbean-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #72C043;
+    letter-spacing: -0.3px;
+    margin-top: -2px;
+}
+
+.podbean-count {
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: #000000;
+    line-height: 1.1;
+}
+
+.podbean-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #444444;
+    line-height: 1;
+}
+
+/* 3. Exact ISO 9001 Badge */
+.badge-iso-exact {
+    background: #ffffff;
+    border: 2px solid #0070CD;
+    border-radius: 8px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    height: 52px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.iso-check-badge {
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #0070CD;
+    border-radius: 50%;
+    color: #008744;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 900;
+    z-index: 2;
+}
+
+.iso-box-orange {
+    background: #FF6B00;
+    border-radius: 4px;
+    padding: 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.iso-num {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.iso-cert {
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: #000000;
+    background: #ffffff;
+    padding: 0 4px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+}
+
+.iso-box-bmqr {
+    border: 1.5px solid #0070CD;
+    border-radius: 4px;
+    padding: 2px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bmqr-text {
+    font-size: 0.72rem;
+    font-weight: 900;
+    color: #000000;
+    line-height: 1.1;
+}
+
+.iso-sub-code {
+    font-size: 0.38rem;
+    font-weight: 700;
+    color: #0070CD;
+    letter-spacing: 0.2px;
+}
+
+.iso-box-emblem {
+    width: 26px;
+    height: 32px;
+    border: 1.5px solid #008744;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0FDF4;
+}
+
+.emblem-inner {
+    color: #008744;
+    font-size: 0.75rem;
+    font-weight: 900;
+}
+
+/* 4. Exact Sectigo Badge */
+.badge-sectigo-exact {
+    background: #ffffff;
+    border: 2px solid #00B06F;
+    border-radius: 12px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 48px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sectigo-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectigo-label {
+    font-size: 0.58rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.6px;
+    line-height: 1;
+}
+
+.sectigo-brand {
+    font-size: 0.92rem;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 0.8px;
+    line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Bottom Purple Banner */
+.footer-bottom-bar {
+    background-color: #5A52E5;
+    padding: 14px 0;
+    color: #ffffff;
+}
+
+.bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.copyright-text {
+    font-size: 0.88rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.social-follow-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.follow-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.social-btn.facebook i { color: #1877F2; }
+.social-btn.whatsapp i { color: #25D366; }
+.social-btn.x-twitter i { color: #1DA1F2; }
+.social-btn.youtube i { color: #FF0000; }
+.social-btn.instagram i { color: #E4405F; }
+.social-btn.linkedin i { color: #0077B5; }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .footer-lower-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bottom-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-download-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .app-btn-exact {
+        justify-content: center;
+    }
+}

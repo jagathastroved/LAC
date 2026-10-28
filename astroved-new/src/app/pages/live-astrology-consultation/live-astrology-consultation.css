@@ -1,0 +1,288 @@
+:root {
+    --primary-color: #6868f9;
+    --primary-color-rgb: 104, 104, 249;
+    --accent-color: #FF7B00;
+    --accent-color-rgb: 255, 123, 0;
+    --background-light: #f9f9fc;
+    --text-dark: #1a1a2e;
+    --text-muted: #666666;
+    --secondary-color: #3b1d8a;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Base styles needed for page layout */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Global Reusable Styles */
+.section-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.section-title.text-center {
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.section-subtitle.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background: transparent;
+}
+
+.text-purple {
+    color: var(--primary-color);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Global Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-color), #FF5500);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.4);
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background: rgba(var(--primary-color-rgb), 0.05);
+}
+
+/* Common Link Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   RESPONSIVE TYPOGRAPHY & LAYOUT
+   ============================================================ */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-container {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ============================================================
+   STICKY CTA BAR
+   ============================================================ */
+.sticky-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 99999;
+    transform: translateY(150%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 1rem 0 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sticky-cta-bar.visible {
+    transform: translateY(0);
+}
+
+.sticky-cta-content {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.sticky-cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.sticky-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.sticky-urgency {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ff5722;
+    animation: gentle-pulse 2s infinite alternate;
+}
+
+.sticky-btn {
+    padding: 12px 32px;
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+@keyframes gentle-pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 768px) {
+    .sticky-cta-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .sticky-title {
+        font-size: 0.95rem;
+    }
+
+    .sticky-urgency {
+        font-size: 0.75rem;
+        display: block;
+    }
+
+    .sticky-btn {
+        width: auto;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .sticky-title {
+        font-size: 1rem;
+    }
+
+    .sticky-urgency {
+        font-size: 0.85rem;
+    }
+
+    .sticky-btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
